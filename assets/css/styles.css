@@ -589,4 +589,8 @@ h3 { font-size: 1.25rem; }
   .steps { grid-template-columns: 1fr; }
   .section { padding-block: 60px; }
 
+  section, .section { padding-block: 2rem !important; }
+  .hero { min-height: 60vh; padding-block: 3rem; }
+  .whatsapp-btn, .fab { bottom: 1rem !important; inset-inline-end: 1rem !important; z-index: 100; }
+
 }
