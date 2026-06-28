@@ -12,9 +12,12 @@
   a { color:#11C5C2; font-weight:700; }
 </style>
 <script>
-  var lang = (navigator.language || '').toLowerCase();
-  var target = lang.indexOf('en') === 0 ? 'https://alasturah.com/en/' : 'https://alasturah.com/ar/';
-  window.location.replace(target);
+  var lang = navigator.language || navigator.userLanguage || '';
+  if (lang.toLowerCase().startsWith('en')) {
+    window.location.replace('/en/');
+  } else {
+    window.location.replace('/ar/');
+  }
 </script>
 </head>
 <body>
