@@ -590,7 +590,20 @@ h3 { font-size: 1.25rem; }
   .section { padding-block: 60px; }
 
   section, .section { padding-block: 2rem !important; }
-  .hero { min-height: 60vh; padding-block: 3rem; }
+  .hero {
+    min-height: unset !important;
+    height: auto !important;
+    padding-block: 2rem !important;
+  }
+  .hero-inner {
+    min-height: unset !important;
+    height: auto !important;
+    flex-direction: column !important;
+    gap: 1.5rem !important;
+  }
+  .hero-visual {
+    display: none !important;
+  }
   .whatsapp-btn, .fab { bottom: 1rem !important; inset-inline-end: 1rem !important; z-index: 100; }
 
   section + section, .section + .section { margin-block-start: 0 !important; }
