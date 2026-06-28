@@ -12,9 +12,8 @@
   a { color:#11C5C2; font-weight:700; }
 </style>
 <script>
-  // Default to Arabic; switch to English only if the browser clearly prefers it.
-  var lang = (navigator.language || "ar").toLowerCase();
-  var target = lang.indexOf("ar") === 0 ? "https://alasturah.com/ar/" : (lang.indexOf("en") === 0 ? "https://alasturah.com/en/" : "https://alasturah.com/ar/");
+  var lang = (navigator.language || '').toLowerCase();
+  var target = lang.indexOf('en') === 0 ? 'https://alasturah.com/en/' : 'https://alasturah.com/ar/';
   window.location.replace(target);
 </script>
 </head>

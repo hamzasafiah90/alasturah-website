@@ -457,29 +457,136 @@ h3 { font-size: 1.25rem; }
   .steps { grid-template-columns: repeat(2, 1fr); }
 }
 
-@media (max-width: 720px) {
-  .nav-links { display: none; }
-  .nav-toggle { display: flex; }
-  .lang-switch { font-size: 0.78rem; padding: 6px 12px; }
+/* === MOBILE NAV FIX === */
+
+@media (max-width: 768px) {
+
+  /* Nav container: logo left, actions right, single row */
+  .container.nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+    padding-block: 0.5rem;
+    gap: 0.5rem;
+  }
+
+  /* Brand: constrain width so it doesn't push EN button off screen */
+  .brand {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    flex: 1 1 0;
+    min-width: 0;
+    overflow: hidden;
+  }
+
+  /* Logo image: slightly smaller on mobile */
+  .brand img {
+    width: 36px;
+    height: 36px;
+    flex-shrink: 0;
+  }
+
+  /* Brand name text: truncate if too long */
+  .brand-name {
+    font-size: 0.85rem;
+    line-height: 1.2;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  /* Brand name subtitle: hide on mobile to save space */
+  .brand-name span {
+    display: none;
+  }
+
+  /* Nav actions: lang switch + hamburger only (hide CTA button on mobile) */
+  .nav-actions {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    flex-shrink: 0;
+  }
+
+  /* Hide CTA button on mobile nav (too wide) */
+  .nav-actions .btn-cta {
+    display: none;
+  }
+
+  /* Lang switch: compact */
+  .lang-switch {
+    font-size: 0.8rem;
+    padding: 0.25rem 0.5rem;
+    border: 1px solid currentColor;
+    border-radius: 4px;
+    white-space: nowrap;
+  }
+
+  /* Hamburger toggle: always visible on mobile */
+  .nav-toggle {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+    width: 36px;
+    height: 36px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 4px;
+    flex-shrink: 0;
+  }
+
+  .nav-toggle span {
+    display: block;
+    width: 22px;
+    height: 2px;
+    background: currentColor;
+    border-radius: 2px;
+    transition: all 0.3s ease;
+  }
+
+  /* Nav links: hidden by default, shown as dropdown when open */
+  .nav-links {
+    display: none;
+    position: absolute;
+    top: 100%;
+    inset-inline-start: 0;
+    inset-inline-end: 0;
+    background: var(--color-surface, #fff);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+    flex-direction: column;
+    padding: 1rem;
+    gap: 0;
+    z-index: 200;
+  }
+
+  .nav-links.open {
+    display: flex;
+  }
+
+  .nav-links a {
+    padding: 0.75rem 1rem;
+    border-bottom: 1px solid var(--color-border, #eee);
+    font-size: 1rem;
+  }
+
+  .nav-links a:last-child {
+    border-bottom: none;
+  }
+
+  /* Make site-header position relative so dropdown positions correctly */
+  .site-header {
+    position: relative;
+  }
+
   .grid-3, .grid-2 { grid-template-columns: 1fr; }
   .form-grid { grid-template-columns: 1fr; }
   .cta-banner { flex-direction: column; text-align: center; padding: 40px 28px; }
   .footer-grid { grid-template-columns: 1fr; }
   .steps { grid-template-columns: 1fr; }
   .section { padding-block: 60px; }
-}
 
-/* Mobile nav open state */
-.nav-links.open {
-  display: flex;
-  position: absolute;
-  top: 100%;
-  inset-inline: 0;
-  background: var(--color-surface);
-  flex-direction: column;
-  align-items: stretch;
-  padding: 20px 24px;
-  border-bottom: 1px solid var(--color-border);
-  box-shadow: var(--shadow-md);
-  gap: 16px;
 }
