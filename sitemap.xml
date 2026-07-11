@@ -25,14 +25,14 @@
   </url>
 
   <url>
-    <loc>https://alasturah.com/ar/products.html</loc>
-    <xhtml:link rel="alternate" hreflang="ar" href="https://alasturah.com/ar/products.html" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://alasturah.com/en/products.html" />
+    <loc>https://alasturah.com/ar/network.html</loc>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://alasturah.com/ar/network.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://alasturah.com/en/network.html" />
   </url>
   <url>
-    <loc>https://alasturah.com/en/products.html</loc>
-    <xhtml:link rel="alternate" hreflang="ar" href="https://alasturah.com/ar/products.html" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://alasturah.com/en/products.html" />
+    <loc>https://alasturah.com/en/network.html</loc>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://alasturah.com/ar/network.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://alasturah.com/en/network.html" />
   </url>
 
   <url>
@@ -44,6 +44,17 @@
     <loc>https://alasturah.com/en/software.html</loc>
     <xhtml:link rel="alternate" hreflang="ar" href="https://alasturah.com/ar/software.html" />
     <xhtml:link rel="alternate" hreflang="en" href="https://alasturah.com/en/software.html" />
+  </url>
+
+  <url>
+    <loc>https://alasturah.com/ar/security.html</loc>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://alasturah.com/ar/security.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://alasturah.com/en/security.html" />
+  </url>
+  <url>
+    <loc>https://alasturah.com/en/security.html</loc>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://alasturah.com/ar/security.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://alasturah.com/en/security.html" />
   </url>
 
   <url>
