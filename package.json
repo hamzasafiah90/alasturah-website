@@ -1,0 +1,10 @@
+{
+  "name": "alasturah-website",
+  "private": true,
+  "scripts": {
+    "dev": "wrangler dev --persist-to ../.alasturah-wrangler-state"
+  },
+  "devDependencies": {
+    "wrangler": "^4.110.0"
+  }
+}
