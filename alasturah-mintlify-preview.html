@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Shabakat Alasturah — Mintlify Design System Preview</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    /* colors — DESIGN-mintlify.md tokens */
+    --primary:#0a0a0a; --on-primary:#ffffff;
+    --brand-green:#00d4a4; --brand-green-deep:#00b48a;
+    --hero-sky-from:#87a8c8; --hero-sky-to:#f5e9d8;
+    --hero-dark-from:#1a3d4a; --hero-dark-to:#2d5a4f;
+    --canvas:#ffffff; --canvas-dark:#0a0a0a;
+    --surface:#f7f7f7; --surface-soft:#fafafa; --surface-code:#1c1c1e;
+    --hairline:#e5e5e5; --hairline-soft:#ededed; --hairline-dark:#1f1f1f;
+    --ink:#0a0a0a; --charcoal:#1c1c1e; --slate:#3a3a3c; --steel:#5a5a5c;
+    --stone:#888888; --muted:#a8a8aa;
+    --on-dark:#ffffff; --on-dark-muted:#b3b3b3;
+    --annotate:#1ba673; --tag:#3772cf; --warn:#c37d0d;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{font-family:'Inter',system-ui,sans-serif;color:var(--ink);background:var(--canvas);font-size:16px;line-height:1.5;-webkit-font-smoothing:antialiased}
+  a{text-decoration:none;color:inherit}
+  .container{max-width:1280px;margin:0 auto;padding:0 32px}
+  code,.mono{font-family:'Geist Mono',ui-monospace,monospace}
+
+  /* ============ NAV ============ */
+  .nav{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.9);backdrop-filter:blur(12px);border-bottom:1px solid var(--hairline-soft);height:64px}
+  .nav-inner{max-width:1280px;margin:0 auto;padding:0 32px;height:64px;display:flex;align-items:center;justify-content:space-between}
+  .nav-left{display:flex;align-items:center;gap:40px}
+  .wordmark{font-size:16px;font-weight:600;letter-spacing:-.2px;display:flex;align-items:center;gap:9px}
+  .wordmark .mark{width:22px;height:22px;border-radius:6px;background:var(--primary);display:inline-flex;align-items:center;justify-content:center;color:#fff;font-size:11px;font-weight:600}
+  .nav-links{display:flex;gap:28px}
+  .nav-links a{font-size:14px;font-weight:500;color:var(--steel);transition:color .15s ease}
+  .nav-links a:hover,.nav-links a.active{color:var(--ink)}
+  .nav-right{display:flex;align-items:center;gap:12px}
+  .lang{font-size:14px;font-weight:500;color:var(--steel);padding:8px 12px;border-radius:8px;transition:background .15s ease}
+  .lang:hover{background:var(--surface)}
+
+  /* ============ BUTTONS (pill, rounded.full) ============ */
+  .btn{display:inline-flex;align-items:center;gap:8px;font-size:14px;font-weight:500;line-height:1.3;padding:10px 20px;border-radius:9999px;cursor:pointer;border:none;transition:background .15s ease,border-color .15s ease,transform .15s ease}
+  .btn-primary{background:var(--primary);color:var(--on-primary)}
+  .btn-primary:hover{background:var(--charcoal)}
+  .btn-accent{background:var(--brand-green);color:var(--primary)}
+  .btn-accent:hover{background:var(--brand-green-deep)}
+  .btn-secondary{background:transparent;color:var(--ink);border:1px solid var(--hairline)}
+  .btn-secondary:hover{border-color:var(--stone)}
+  .btn-on-dark{background:var(--on-dark);color:var(--primary)}
+  .btn-on-dark:hover{background:#f0f0f0}
+  .btn-secondary-dark{background:transparent;color:var(--on-dark);border:1px solid rgba(255,255,255,.3)}
+  .btn-secondary-dark:hover{border-color:rgba(255,255,255,.6)}
+
+  /* ============ HERO (sky band) ============ */
+  .hero{background:linear-gradient(180deg,var(--hero-sky-from) 0%,var(--hero-sky-to) 100%);padding:120px 32px 96px;text-align:center;position:relative;overflow:hidden}
+  .hero .cloud{position:absolute;border-radius:9999px;background:rgba(255,255,255,.35);filter:blur(40px);pointer-events:none}
+  .hero .c1{width:420px;height:130px;top:60px;left:-80px}
+  .hero .c2{width:520px;height:150px;top:140px;right:-120px;background:rgba(255,255,255,.28)}
+  .hero .c3{width:360px;height:110px;top:320px;left:14%;background:rgba(255,255,255,.22)}
+  .hero-inner{position:relative;max-width:880px;margin:0 auto}
+  .hero h1{font-size:72px;font-weight:600;line-height:1.05;letter-spacing:-2px;color:var(--ink)}
+  .hero .subtitle{font-size:18px;font-weight:400;line-height:1.5;color:var(--slate);max-width:640px;margin:24px auto 0}
+  .hero-cta{display:flex;gap:12px;justify-content:center;margin-top:32px}
+
+  /* hero product mockup */
+  .mockup{position:relative;max-width:960px;margin:64px auto 0;background:var(--canvas);border:1px solid var(--hairline-soft);border-radius:12px;box-shadow:rgba(0,0,0,.12) 0 24px 48px -8px;overflow:hidden;text-align:left}
+  .mockup-bar{display:flex;align-items:center;gap:6px;padding:12px 16px;border-bottom:1px solid var(--hairline-soft)}
+  .dot{width:10px;height:10px;border-radius:9999px;background:var(--hairline)}
+  .mockup-url{margin-left:12px;background:var(--surface);border:1px solid var(--hairline);border-radius:8px;font-size:12px;color:var(--steel);padding:4px 12px}
+  .mockup-body{display:grid;grid-template-columns:200px 1fr 300px;min-height:340px}
+  .m-side{border-right:1px solid var(--hairline-soft);padding:16px 8px}
+  .m-side .sec{font-size:11px;font-weight:600;letter-spacing:.5px;text-transform:uppercase;color:var(--steel);padding:12px 12px 6px}
+  .m-side .item{font-size:14px;color:var(--steel);padding:7px 12px;border-radius:6px}
+  .m-side .item.on{background:var(--surface);color:var(--ink);font-weight:500}
+  .m-main{padding:24px}
+  .m-main h4{font-size:18px;font-weight:600;line-height:1.4}
+  .m-main p{font-size:13px;color:var(--steel);margin-top:4px}
+  .stat-row{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:18px}
+  .stat{border:1px solid var(--hairline);border-radius:8px;padding:14px}
+  .stat .n{font-size:22px;font-weight:600;letter-spacing:-.5px}
+  .stat .l{font-size:12px;color:var(--steel);margin-top:2px}
+  .stat .up{color:var(--annotate);font-size:11px;font-weight:600}
+  .m-code{background:var(--surface-code);padding:0;display:flex;flex-direction:column}
+  .m-code-head{display:flex;justify-content:space-between;align-items:center;color:var(--on-dark-muted);font-size:13px;padding:10px 16px;border-bottom:1px solid var(--hairline-dark)}
+  .m-code-head .copy{font-size:12px;border:1px solid var(--hairline-dark);border-radius:6px;padding:3px 8px;color:var(--on-dark-muted)}
+  .m-code pre{padding:16px;font-family:'Geist Mono',monospace;font-size:12.5px;line-height:1.7;color:var(--on-dark);overflow:hidden}
+  .tk-c{color:#6a6a6e}.tk-g{color:var(--brand-green)}.tk-b{color:#7aa5e8}.tk-w{color:#e2b45a}
+
+  /* ============ CAPABILITY STRIP ============ */
+  .strip{padding:48px 32px;border-bottom:1px solid var(--hairline-soft)}
+  .strip .label{text-align:center;font-size:11px;font-weight:600;letter-spacing:.5px;text-transform:uppercase;color:var(--steel)}
+  .strip-row{display:flex;flex-wrap:wrap;justify-content:center;gap:16px 48px;margin-top:20px}
+  .strip-row span{font-size:16px;font-weight:500;color:var(--steel)}
+
+  /* ============ SECTIONS ============ */
+  section.band{padding:96px 0}
+  .eyebrow{font-size:11px;font-weight:600;letter-spacing:.5px;text-transform:uppercase;color:var(--brand-green-deep)}
+  .sec-head{max-width:720px}
+  .sec-head h2{font-size:48px;font-weight:600;line-height:1.1;letter-spacing:-1px;margin-top:12px}
+  .sec-head p{font-size:18px;color:var(--steel);margin-top:16px}
+
+  /* what we do cards */
+  .pillars{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:48px}
+  .card-feature{background:var(--surface);border-radius:12px;padding:32px;display:flex;flex-direction:column;transition:transform .15s ease}
+  .pill-badge{align-self:flex-start;font-size:13px;font-weight:600;line-height:1.4;padding:2px 10px;border-radius:9999px;background:var(--canvas);border:1px solid var(--hairline)}
+  .card-feature h3{font-size:22px;font-weight:600;line-height:1.3;margin-top:20px;letter-spacing:-.2px}
+  .card-feature p{font-size:14px;color:var(--steel);margin-top:10px;flex-grow:1}
+  .card-link{font-size:14px;font-weight:500;margin-top:24px;display:inline-flex;align-items:center;gap:6px}
+  .card-link .arr{transition:transform .15s ease}
+  .card-feature:hover .arr{transform:translateX(3px)}
+  .icon-tile{width:40px;height:40px;border-radius:8px;background:var(--canvas);border:1px solid var(--hairline);display:flex;align-items:center;justify-content:center;margin-bottom:20px}
+  .icon-tile svg{width:20px;height:20px;stroke:var(--ink)}
+
+  /* ============ CONVERGENCE (dark band) ============ */
+  .dark-band{background:linear-gradient(135deg,var(--hero-dark-from) 0%,var(--hero-dark-to) 100%);border-radius:0;color:var(--on-dark);padding:96px 0;position:relative;overflow:hidden}
+  .dark-band .grid-bg{position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.05) 1px,transparent 1px);background-size:48px 48px;pointer-events:none}
+  .dark-inner{position:relative;display:grid;grid-template-columns:1.2fr .8fr;gap:64px;align-items:center}
+  .dark-inner .eyebrow{color:var(--brand-green)}
+  .dark-inner h2{font-size:36px;font-weight:600;line-height:1.2;letter-spacing:-.5px;margin-top:12px}
+  .dark-inner p{font-size:16px;color:var(--on-dark-muted);margin-top:16px;max-width:520px}
+  .big-stat .n{font-size:96px;font-weight:600;letter-spacing:-3px;line-height:1;color:var(--brand-green)}
+  .big-stat .l{font-size:14px;color:var(--on-dark-muted);margin-top:8px;max-width:280px}
+
+  /* ============ WHY ============ */
+  .why{background:var(--surface-soft);border-top:1px solid var(--hairline-soft);border-bottom:1px solid var(--hairline-soft)}
+  .why-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:48px}
+  .card-base{background:var(--canvas);border:1px solid var(--hairline);border-radius:12px;padding:24px}
+  .card-base h4{font-size:18px;font-weight:600;line-height:1.4;margin-top:16px}
+  .card-base p{font-size:14px;color:var(--steel);margin-top:8px}
+
+  /* ============ CTA ============ */
+  .cta{text-align:center;padding:96px 32px}
+  .cta h2{font-size:48px;font-weight:600;line-height:1.1;letter-spacing:-1px;max-width:680px;margin:0 auto}
+  .cta p{font-size:18px;color:var(--steel);margin-top:16px}
+  .cta .row{display:flex;gap:12px;justify-content:center;margin-top:32px}
+
+  /* ============ FOOTER ============ */
+  footer{border-top:1px solid var(--hairline);padding:64px 32px 40px}
+  .foot-grid{max-width:1280px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr 1.4fr;gap:48px}
+  .foot-brand p{font-size:14px;color:var(--steel);margin-top:12px;max-width:320px}
+  .foot-col h5{font-size:14px;font-weight:500;color:var(--ink)}
+  .foot-col a{display:block;font-size:14px;color:var(--steel);padding:4px 0;transition:color .15s ease}
+  .foot-col a:hover{color:var(--ink)}
+  .foot-col .first{margin-top:14px}
+  .foot-bottom{max-width:1280px;margin:48px auto 0;padding-top:24px;border-top:1px solid var(--hairline-soft);display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;font-size:13px;color:var(--stone)}
+
+  /* ============ RESPONSIVE ============ */
+  @media(max-width:1023px){
+    .nav-links{display:none}
+    .hero h1{font-size:56px;letter-spacing:-1.5px}
+    .mockup-body{grid-template-columns:180px 1fr}
+    .m-code{display:none}
+    .pillars,.why-grid{grid-template-columns:1fr 1fr}
+    .dark-inner{grid-template-columns:1fr;gap:40px}
+  }
+  @media(max-width:767px){
+    .hero{padding:80px 20px 64px}
+    .hero h1{font-size:44px;letter-spacing:-1px}
+    .sec-head h2,.cta h2{font-size:36px}
+    .pillars,.why-grid{grid-template-columns:1fr}
+    .mockup-body{grid-template-columns:1fr}
+    .m-side{display:none}
+    .foot-grid{grid-template-columns:1fr 1fr}
+    .big-stat .n{font-size:72px}
+  }
+  @media(max-width:479px){
+    .hero h1{font-size:36px}
+    .foot-grid{grid-template-columns:1fr}
+    .btn{padding:13px 22px}
+    .hero-cta,.cta .row{flex-direction:column;align-items:center}
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav">
+  <div class="nav-inner">
+    <div class="nav-left">
+      <a href="#" class="wordmark"><span class="mark">SA</span>Shabakat Alasturah</a>
+      <div class="nav-links">
+        <a href="#" class="active">Home</a>
+        <a href="#">About</a>
+        <a href="#">Network</a>
+        <a href="#">Security</a>
+        <a href="#">Software</a>
+        <a href="#">Contact</a>
+      </div>
+    </div>
+    <div class="nav-right">
+      <a href="#" class="lang">العربية</a>
+      <a href="#" class="btn btn-primary">Request a Quote</a>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<header class="hero">
+  <div class="cloud c1"></div><div class="cloud c2"></div><div class="cloud c3"></div>
+  <div class="hero-inner">
+    <h1>Connectivity. Security.<br>Software.</h1>
+    <p class="subtitle">From 5G signal boosters and centralized satellite systems to enterprise networking, physical security, and custom software — we handle the infrastructure your building or business actually needs.</p>
+    <div class="hero-cta">
+      <a href="#" class="btn btn-accent">Request a Quote</a>
+      <a href="#" class="btn btn-secondary">Explore Our Services</a>
+    </div>
+  </div>
+
+  <!-- product mockup -->
+  <div class="mockup">
+    <div class="mockup-bar">
+      <span class="dot"></span><span class="dot"></span><span class="dot"></span>
+      <span class="mockup-url">portal.alasturah.com/site/tower-a</span>
+    </div>
+    <div class="mockup-body">
+      <div class="m-side">
+        <div class="sec">Infrastructure</div>
+        <div class="item on">Overview</div>
+        <div class="item">Coverage Map</div>
+        <div class="item">Network</div>
+        <div class="item">Data Center</div>
+        <div class="sec">Security</div>
+        <div class="item">Cameras</div>
+        <div class="item">Access Control</div>
+      </div>
+      <div class="m-main">
+        <h4>Tower A — Site Overview</h4>
+        <p>All systems on one converged infrastructure.</p>
+        <div class="stat-row">
+          <div class="stat"><div class="n">98.6%</div><div class="l">5G coverage</div><div class="up">▲ 2.1% this month</div></div>
+          <div class="stat"><div class="n">42/42</div><div class="l">Cameras online</div><div class="up">All streams healthy</div></div>
+          <div class="stat"><div class="n">61%</div><div class="l">PoE budget used</div><div class="up">Within capacity</div></div>
+        </div>
+      </div>
+      <div class="m-code">
+        <div class="m-code-head"><span>telemetry.log</span><span class="copy">Copy</span></div>
+        <pre><span class="tk-c"># live site telemetry</span>
+<span class="tk-g">✓</span> booster.floor_12 <span class="tk-g">−94dBm → −67dBm</span>
+<span class="tk-g">✓</span> vlan.security <span class="tk-b">isolated</span>
+<span class="tk-g">✓</span> nvr.primary <span class="tk-b">recording</span>
+<span class="tk-w">!</span> ups.rack_2 <span class="tk-w">on battery 3m</span>
+<span class="tk-g">✓</span> failover.lte <span class="tk-b">standby</span></pre>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- CAPABILITY STRIP -->
+<div class="strip">
+  <div class="label">Engineered for buildings and businesses across Saudi Arabia</div>
+  <div class="strip-row">
+    <span>CST-Compliant Boosters</span><span>Enterprise LAN/WAN</span><span>Fiber Optics</span><span>Data Centers</span><span>AI Video Intelligence</span><span>Custom Software</span>
+  </div>
+</div>
+
+<!-- WHAT WE DO -->
+<section class="band">
+  <div class="container">
+    <div class="sec-head">
+      <div class="eyebrow">What We Do</div>
+      <h2>Network infrastructure, physical security, and custom software</h2>
+      <p>Explore each service on its own, or combine them for a single project.</p>
+    </div>
+    <div class="pillars">
+      <a href="#" class="card-feature">
+        <div class="icon-tile"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round"><path d="M2 12h4m12 0h4M12 2v4m0 12v4"/><circle cx="12" cy="12" r="4"/></svg></div>
+        <span class="pill-badge">Network</span>
+        <h3>Network &amp; Connectivity Solutions</h3>
+        <p>5G boosters, centralized satellite systems, enterprise LAN/WAN, fiber, wireless, and data centers.</p>
+        <span class="card-link">Explore Network Solutions <span class="arr">→</span></span>
+      </a>
+      <a href="#" class="card-feature">
+        <div class="icon-tile"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 3v5c0 5-3.5 8.5-8 10-4.5-1.5-8-5-8-10V6l8-3z"/></svg></div>
+        <span class="pill-badge">Security</span>
+        <h3>Physical Security Solutions</h3>
+        <p>AI video intelligence, access control, and surveillance systems built on your network.</p>
+        <span class="card-link">Explore Security Solutions <span class="arr">→</span></span>
+      </a>
+      <a href="#" class="card-feature">
+        <div class="icon-tile"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M8 7l-5 5 5 5M16 7l5 5-5 5"/></svg></div>
+        <span class="pill-badge">Software</span>
+        <h3>Software Development</h3>
+        <p>Custom web and mobile apps, process automation, and API integration for your business.</p>
+        <span class="card-link">Explore Software Services <span class="arr">→</span></span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- CONVERGENCE (dark band) -->
+<section class="dark-band">
+  <div class="grid-bg"></div>
+  <div class="container dark-inner">
+    <div>
+      <div class="eyebrow">The Value of Convergence</div>
+      <h2>One infrastructure. One dashboard. Lower costs.</h2>
+      <p>Enterprises that unify security and networking under one infrastructure see significant reductions in operating costs — shared cabling and PoE, one dashboard, and network telemetry that strengthens security threat detection.</p>
+      <div style="margin-top:32px"><a href="#" class="btn btn-on-dark">See How It Works</a></div>
+    </div>
+    <div class="big-stat">
+      <div class="n">35%</div>
+      <div class="l">average reduction in operating costs when security and networking converge</div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY -->
+<section class="band why">
+  <div class="container">
+    <div class="sec-head">
+      <div class="eyebrow">Why Shabakat Alasturah</div>
+      <h2>Regulatory compliance, executed with engineering precision</h2>
+    </div>
+    <div class="why-grid">
+      <div class="card-base">
+        <div class="icon-tile" style="margin-bottom:0"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 12l2 2 4-5"/><circle cx="12" cy="12" r="9"/></svg></div>
+        <h4>Regulator-Approved Equipment</h4>
+        <p>We supply boosters compliant with CST regulations — not unlicensed devices that expose you to legal risk.</p>
+      </div>
+      <div class="card-base">
+        <div class="icon-tile" style="margin-bottom:0"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg></div>
+        <h4>On-Site Assessment First</h4>
+        <p>We assess actual coverage on-site before recommending a solution, instead of a one-size-fits-all answer.</p>
+      </div>
+      <div class="card-base">
+        <div class="icon-tile" style="margin-bottom:0"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 15c2-5 6-6 8-6s6 1 8 6M12 9V4M8 20h8"/></svg></div>
+        <h4>Support After Delivery</h4>
+        <p>Support doesn't end at installation or launch; we stay with you for follow-up and maintenance.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta">
+  <h2>Ready to improve your building's connectivity or build your own system?</h2>
+  <p>Reach out today and our team will respond to evaluate your needs.</p>
+  <div class="row">
+    <a href="#" class="btn btn-primary">Request a Quote</a>
+    <a href="#" class="btn btn-secondary">WhatsApp</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="foot-grid">
+    <div class="foot-brand">
+      <a href="#" class="wordmark"><span class="mark">SA</span>Shabakat Alasturah</a>
+      <p>5G boosters, centralized satellite systems for buildings, and custom software development for businesses and properties in Saudi Arabia.</p>
+    </div>
+    <div class="foot-col">
+      <h5>Company</h5>
+      <a class="first" href="#">About</a>
+      <a href="#">Network</a>
+      <a href="#">Security</a>
+      <a href="#">Software Development</a>
+      <a href="#">Contact</a>
+    </div>
+    <div class="foot-col">
+      <h5>Legal</h5>
+      <a class="first" href="#">Privacy Policy</a>
+      <a href="#">Terms &amp; Conditions</a>
+    </div>
+    <div class="foot-col">
+      <h5>Contact</h5>
+      <a class="first" href="tel:+966583883398">+966 58 388 3398</a>
+      <a href="mailto:sales@alasturah.com">Sales: sales@alasturah.com</a>
+      <a href="mailto:support@alasturah.com">Support: support@alasturah.com</a>
+    </div>
+  </div>
+  <div class="foot-bottom">
+    <span>© 2026 Shabakat Alasturah Almumayizah Est. All rights reserved.</span>
+    <span>CR No.: 7053859943 · VAT No.: 312152074400003</span>
+  </div>
+</footer>
+
+</body>
+</html>
