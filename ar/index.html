@@ -16,8 +16,8 @@
 <link rel="icon" href="../assets/img/favicon.svg" type="image/svg+xml" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet" />
-<link rel="stylesheet" href="../assets/css/styles.css" />
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="../assets/css/design-system.css" />
 <!-- TODO: once a CR/VAT number is confirmed, replace the placeholders in LocalBusiness schema below. -->
 <script type="application/ld+json">
 {
@@ -36,192 +36,284 @@
 }
 </script>
 <!-- TODO: add Google Search Console verification meta tag and GA4 snippet here before the marketing phase. -->
+<style>
+  /* Page-specific: not covered by design-system.css component classes */
+  .hero .c1 { width: 420px; height: 130px; top: 60px; left: -80px; }
+  .hero .c2 { width: 520px; height: 150px; top: 140px; right: -120px; background: rgba(255,255,255,.28); }
+  .hero .c3 { width: 360px; height: 110px; top: 320px; left: 14%; background: rgba(255,255,255,.22); }
+
+  .mockup-bar { display: flex; align-items: center; gap: 6px; padding: 12px 16px; border-bottom: 1px solid var(--hairline-soft); }
+  .dot { width: 10px; height: 10px; border-radius: var(--r-full); background: var(--hairline); }
+  .mockup-url { margin-inline-start: 12px; background: var(--surface); border: 1px solid var(--hairline); border-radius: var(--r-md); font-size: 12px; color: var(--steel); padding: 4px 12px; }
+  .mockup-body { display: grid; grid-template-columns: 200px 1fr 300px; min-height: 340px; }
+  .m-side { border-inline-end: 1px solid var(--hairline-soft); padding: 16px 8px; }
+  .m-side .sec { font-size: 11px; font-weight: 600; letter-spacing: .5px; text-transform: uppercase; color: var(--steel); padding: 12px 12px 6px; }
+  .m-side .item { font-size: 14px; color: var(--steel); padding: 7px 12px; border-radius: 6px; }
+  .m-side .item.on { background: var(--surface); color: var(--ink); font-weight: 500; }
+  .m-main { padding: 24px; }
+  .m-main h4 { font-size: 18px; font-weight: 600; line-height: 1.4; }
+  .m-main p { font-size: 13px; color: var(--steel); margin-top: 4px; }
+  .stat-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-top: 18px; }
+  .stat { border: 1px solid var(--hairline); border-radius: var(--r-md); padding: 14px; }
+  .stat .n { font-size: 22px; font-weight: 600; letter-spacing: -.5px; }
+  .stat .l { font-size: 12px; color: var(--steel); margin-top: 2px; }
+  .stat .up { color: var(--annotate); font-size: 11px; font-weight: 600; }
+  .m-code { background: var(--surface-code); padding: 0; display: flex; flex-direction: column; }
+  .m-code-head { display: flex; justify-content: space-between; align-items: center; color: var(--on-dark-muted); font-size: 13px; padding: 10px 16px; border-bottom: 1px solid var(--hairline-dark); }
+  .m-code-head .copy { font-size: 12px; border: 1px solid var(--hairline-dark); border-radius: 6px; padding: 3px 8px; color: var(--on-dark-muted); }
+  .m-code pre { padding: 16px; font-family: var(--font-code); font-size: 12.5px; line-height: 1.7; color: var(--on-dark); overflow: hidden; }
+  .tk-c { color: #6a6a6e; } .tk-g { color: var(--brand-green); } .tk-b { color: #7aa5e8; } .tk-w { color: #e2b45a; }
+
+  .strip .label { text-align: center; font-size: 13px; font-weight: 600; color: var(--steel); }
+
+  .sec-head { max-width: 720px; }
+  .sec-head.center { margin-inline: auto; text-align: center; }
+  .sec-head h2 { margin-top: 12px; }
+  .sec-head p { font-size: 18px; color: var(--steel); margin-top: 16px; }
+
+  .card-feature .icon-tile { margin-bottom: 20px; }
+  .card-feature h3 { margin-top: 20px; }
+  .card-feature p { font-size: 14px; color: var(--steel); margin-top: 10px; flex-grow: 1; }
+
+  .dark-inner { position: relative; display: grid; grid-template-columns: 1.2fr .8fr; gap: 64px; align-items: center; }
+  .dark-inner h2 { margin-top: 12px; }
+  .dark-inner p { font-size: 16px; color: var(--on-dark-muted); margin-top: 16px; max-width: 520px; }
+  .big-stat .n { font-size: 96px; font-weight: 600; letter-spacing: -3px; line-height: 1; color: var(--brand-green); }
+  .big-stat .l { font-size: 14px; color: var(--on-dark-muted); margin-top: 8px; max-width: 280px; }
+
+  .why-grid { margin-top: 48px; }
+  .card-base h4 { margin-top: 16px; }
+  .card-base p { font-size: 14px; color: var(--steel); margin-top: 8px; }
+
+  .cta { text-align: center; padding: var(--sp-section-lg) 32px; }
+  .cta h2 { max-width: 680px; margin-inline: auto; }
+  .cta p { font-size: 18px; color: var(--steel); margin-top: 16px; }
+  .cta .row { display: flex; gap: 12px; justify-content: center; margin-top: 32px; }
+
+  .foot-brand p { font-size: 14px; color: var(--steel); margin-top: 12px; max-width: 320px; }
+  .foot-col .first { margin-top: 14px; }
+
+  .whatsapp-float { position: fixed; bottom: 26px; inset-inline-end: 26px; z-index: 200; background: #25D366; width: 58px; height: 58px; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 8px 24px rgba(0,0,0,.2); transition: transform .15s ease; }
+  .whatsapp-float:hover { transform: scale(1.08); }
+
+  @media (max-width: 1023px) {
+    .mockup-body { grid-template-columns: 180px 1fr; }
+    .m-code { display: none; }
+    .dark-inner { grid-template-columns: 1fr; gap: 40px; }
+  }
+  @media (max-width: 767px) {
+    .mockup-body { grid-template-columns: 1fr; }
+    .m-side { display: none; }
+    .big-stat .n { font-size: 72px; }
+  }
+  @media (max-width: 479px) {
+    .cta .row { flex-direction: column; align-items: center; }
+  }
+</style>
 </head>
 <body>
 
-<header class="site-header">
-  <div class="container nav">
-    <a href="index.html" class="brand">
-      <img src="../assets/img/logo.png" alt="شعار شبكات الأسطورة" width="42" height="42" />
-      <span class="brand-name">شبكات الأسطورة<span>حلول شبكات وبرمجيات</span></span>
-    </a>
-    <nav class="nav-links" id="nav-links">
-      <a href="index.html" class="active">الرئيسية</a>
-      <a href="about.html">من نحن</a>
-      <a href="network.html">الشبكات</a>
-      <a href="software.html">تطوير البرمجيات</a>
-      <a href="security.html">الأمن والحماية</a>
-      <a href="contact.html">اتصل بنا</a>
-    </nav>
-    <div class="nav-actions">
-      <a class="lang-switch" href="../en/index.html">EN</a>
-      <a class="btn btn-cta" href="contact.html">اطلب عرض سعر</a>
-      <button class="nav-toggle" aria-label="فتح القائمة" aria-expanded="false">
-        <span></span><span></span><span></span>
-      </button>
+<nav class="nav">
+  <div class="nav-inner">
+    <div class="nav-left">
+      <a href="index.html" class="wordmark">
+        <img src="../assets/img/logo.png" alt="شعار شبكات الأسطورة" width="42" height="42" />
+        شبكات الأسطورة
+      </a>
+      <div class="nav-links" id="nav-links">
+        <a href="index.html" class="active">الرئيسية</a>
+        <a href="about.html">من نحن</a>
+        <a href="network.html">الشبكات</a>
+        <a href="software.html">تطوير البرمجيات</a>
+        <a href="security.html">الأمن والحماية</a>
+        <a href="contact.html">اتصل بنا</a>
+      </div>
+    </div>
+    <div class="nav-right">
+      <a href="../en/index.html" class="lang">EN</a>
+      <a href="contact.html" class="btn btn-primary">اطلب عرض سعر</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="cloud c1"></div><div class="cloud c2"></div><div class="cloud c3"></div>
+  <div class="hero-inner">
+    <span class="eyebrow">اتصال. أمن. برمجيات.</span>
+    <h1>اتصال، أمن، وبرمجيات لمبناك ولعملك</h1>
+    <p class="subtitle">من معززات اتصال 5G وأنظمة الاستقبال الفضائي المركزية إلى شبكات المؤسسات، الأمن المادي، والبرمجيات المخصصة — نوفّر البنية التحتية التي يحتاجها مبناك أو عملك فعليًا.</p>
+    <div class="hero-cta">
+      <a href="contact.html" class="btn btn-accent">اطلب عرض سعر</a>
+      <a href="#what-we-do" class="btn btn-secondary">استعرض خدماتنا</a>
+    </div>
+  </div>
+
+  <div class="mockup">
+    <div class="mockup-bar">
+      <span class="dot"></span><span class="dot"></span><span class="dot"></span>
+      <span class="mockup-url">portal.alasturah.com/site/tower-a</span>
+    </div>
+    <div class="mockup-body">
+      <div class="m-side">
+        <div class="sec">Infrastructure</div>
+        <div class="item on">Overview</div>
+        <div class="item">Coverage Map</div>
+        <div class="item">Network</div>
+        <div class="item">Data Center</div>
+        <div class="sec">Security</div>
+        <div class="item">Cameras</div>
+        <div class="item">Access Control</div>
+      </div>
+      <div class="m-main">
+        <h4>Tower A — Site Overview</h4>
+        <p>All systems on one converged infrastructure.</p>
+        <div class="stat-row">
+          <div class="stat"><div class="n">98.6%</div><div class="l">5G coverage</div><div class="up">▲ 2.1% this month</div></div>
+          <div class="stat"><div class="n">42/42</div><div class="l">Cameras online</div><div class="up">All streams healthy</div></div>
+          <div class="stat"><div class="n">61%</div><div class="l">PoE budget used</div><div class="up">Within capacity</div></div>
+        </div>
+      </div>
+      <div class="m-code">
+        <div class="m-code-head"><span>telemetry.log</span><span class="copy">Copy</span></div>
+        <pre><span class="tk-c"># live site telemetry</span>
+<span class="tk-g">✓</span> booster.floor_12 <span class="tk-g">−94dBm → −67dBm</span>
+<span class="tk-g">✓</span> vlan.security <span class="tk-b">isolated</span>
+<span class="tk-g">✓</span> nvr.primary <span class="tk-b">recording</span>
+<span class="tk-w">!</span> ups.rack_2 <span class="tk-w">on battery 3m</span>
+<span class="tk-g">✓</span> failover.lte <span class="tk-b">standby</span></pre>
+      </div>
     </div>
   </div>
 </header>
 
+<div class="strip">
+  <div class="label">مصمّمة للمباني والمنشآت في جميع أنحاء المملكة العربية السعودية</div>
+  <div class="strip-row">
+    <span>معززات معتمدة من CST</span><span>شبكات LAN/WAN للمؤسسات</span><span>ألياف ضوئية</span><span>مراكز بيانات</span><span>ذكاء اصطناعي لمراقبة الفيديو</span><span>برمجيات مخصصة</span>
+  </div>
+</div>
+
 <main>
-  <section class="hero">
-    <div class="container hero-inner">
-      <div>
-        <span class="eyebrow">اتصال. أمن. برمجيات.</span>
-        <h1>اتصال، أمن، وبرمجيات لمبناك ولعملك</h1>
-        <p class="lead">من معززات اتصال 5G وأنظمة الاستقبال الفضائي المركزية إلى شبكات المؤسسات، الأمن المادي، والبرمجيات المخصصة — نوفّر البنية التحتية التي يحتاجها مبناك أو عملك فعليًا.</p>
-        <div class="hero-actions">
-          <a href="contact.html" class="btn btn-cta">اطلب عرض سعر</a>
-          <a href="#what-we-do" class="btn btn-outline">استعرض خدماتنا</a>
-        </div>
-      </div>
-      <div class="hero-visual">
-        <svg width="280" height="280" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
-          <rect x="6" y="6" width="34" height="34" rx="6" transform="rotate(45 23 23)" fill="rgba(255,255,255,0.12)"/>
-          <rect x="20" y="20" width="26" height="26" rx="5" transform="rotate(45 33 33)" fill="rgba(17,197,194,0.85)"/>
-          <circle cx="50" cy="14" r="4" fill="#fff"/>
-          <circle cx="14" cy="50" r="4" fill="#fff"/>
-        </svg>
-      </div>
-    </div>
+  <section class="band" id="what-we-do">
     <div class="container">
-      <div class="stats">
-        <div class="stat-card"><strong>تركيب احترافي</strong><span>تقييم ميداني لكل مشروع</span></div>
-        <div class="stat-card"><strong>أمن متكامل</strong><span>ذكاء اصطناعي وتحكم بالدخول، مبني على شبكتك</span></div>
-        <div class="stat-card"><strong>بنية تحتية للمؤسسات</strong><span>شبكات، ألياف ضوئية، ومراكز بيانات بمقاييس كبيرة</span></div>
-        <div class="stat-card"><strong>دعم مستمر</strong><span>ما بعد التركيب والتسليم</span></div>
-      </div>
-    </div>
-  </section>
-
-  <section class="section" id="what-we-do">
-    <div class="container">
-      <div class="section-head center">
+      <div class="sec-head center">
         <span class="eyebrow">ماذا نقدّم</span>
-        <h2>بنية تحتية للشبكات، أمن مادي، وبرمجيات مخصصة</h2>
-        <p class="lead">استعرض كل خدمة بشكل منفصل، أو ادمجها ضمن مشروع واحد.</p>
+        <h2 class="t-h1">بنية تحتية للشبكات، أمن مادي، وبرمجيات مخصصة</h2>
+        <p>استعرض كل خدمة بشكل منفصل، أو ادمجها ضمن مشروع واحد.</p>
       </div>
-      <div class="grid grid-3">
-        <div class="card product-card">
-          <span class="tag">الشبكات</span>
-          <h3>حلول الشبكات والاتصال</h3>
+      <div class="grid-3">
+        <a href="network.html" class="card-feature">
+          <div class="icon-tile"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round"><path d="M2 12h4m12 0h4M12 2v4m0 12v4"/><circle cx="12" cy="12" r="4"/></svg></div>
+          <span class="pill-badge">الشبكات</span>
+          <h3 class="t-h4">حلول الشبكات والاتصال</h3>
           <p>معززات 5G، أنظمة استقبال فضائي مركزية، شبكات LAN/WAN للمؤسسات، ألياف ضوئية، شبكات لاسلكية، ومراكز بيانات.</p>
-          <a href="network.html" class="card-link">استعرض حلول الشبكات ←</a>
-        </div>
-        <div class="card product-card">
-          <span class="tag">الأمن والحماية</span>
-          <h3>حلول الأمن المادي</h3>
+          <span class="card-link">استعرض حلول الشبكات <span class="arr">←</span></span>
+        </a>
+        <a href="security.html" class="card-feature">
+          <div class="icon-tile"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 3v5c0 5-3.5 8.5-8 10-4.5-1.5-8-5-8-10V6l8-3z"/></svg></div>
+          <span class="pill-badge">الأمن والحماية</span>
+          <h3 class="t-h4">حلول الأمن المادي</h3>
           <p>ذكاء اصطناعي لمراقبة الفيديو، تحكم في الدخول، وأنظمة مراقبة مبنية على شبكتك.</p>
-          <a href="security.html" class="card-link">استعرض حلول الأمن ←</a>
-        </div>
-        <div class="card product-card">
-          <span class="tag">البرمجيات</span>
-          <h3>تطوير البرمجيات</h3>
+          <span class="card-link">استعرض حلول الأمن <span class="arr">←</span></span>
+        </a>
+        <a href="software.html" class="card-feature">
+          <div class="icon-tile"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M8 7l-5 5 5 5M16 7l5 5-5 5"/></svg></div>
+          <span class="pill-badge">البرمجيات</span>
+          <h3 class="t-h4">تطوير البرمجيات</h3>
           <p>تطبيقات ويب وموبايل مخصصة، أتمتة العمليات، وتكامل عبر واجهات برمجية.</p>
-          <a href="software.html" class="card-link">استعرض خدمات البرمجيات ←</a>
-        </div>
+          <span class="card-link">استعرض خدمات البرمجيات <span class="arr">←</span></span>
+        </a>
       </div>
     </div>
   </section>
 
-  <section class="section section--alt">
-    <div class="container">
-      <div class="cta-banner">
-        <div>
-          <h2>قيمة التكامل</h2>
-          <p>المنشآت التي توحّد الأمن والشبكات ضمن بنية تحتية واحدة تحقق متوسط خفض 35% في التكاليف التشغيلية — لوحة تحكم واحدة، كابلات وطاقة مشتركة (PoE)، وبيانات شبكة تعزز كشف التهديدات الأمنية.</p>
-        </div>
+  <section class="dark-band">
+    <div class="grid-bg"></div>
+    <div class="container dark-inner">
+      <div>
+        <h2 class="t-h2">قيمة التكامل</h2>
+        <p>المنشآت التي توحّد الأمن والشبكات ضمن بنية تحتية واحدة تحقق متوسط خفض 35% في التكاليف التشغيلية — لوحة تحكم واحدة، كابلات وطاقة مشتركة (PoE)، وبيانات شبكة تعزز كشف التهديدات الأمنية.</p>
+      </div>
+      <div class="big-stat">
+        <div class="n">35%</div>
+        <div class="l">متوسط خفض في التكاليف التشغيلية</div>
       </div>
     </div>
   </section>
 
-  <section class="section">
+  <section class="band band-surface why">
     <div class="container">
-      <div class="section-head center">
+      <div class="sec-head center">
         <span class="eyebrow">لماذا شبكات الأسطورة</span>
-        <h2>التزام تنظيمي، وتنفيذ هندسي دقيق</h2>
+        <h2 class="t-h1">التزام تنظيمي، وتنفيذ هندسي دقيق</h2>
       </div>
-      <div class="grid grid-3">
-        <div class="card">
-          <div class="card-icon">📡</div>
-          <h3>أجهزة معتمدة نظاميًا</h3>
+      <div class="grid-3 why-grid">
+        <div class="card-base">
+          <div class="icon-tile"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 12l2 2 4-5"/><circle cx="12" cy="12" r="9"/></svg></div>
+          <h4 class="t-h5">أجهزة معتمدة نظاميًا</h4>
           <p>نوفّر معززات اتصال متوافقة مع لوائح هيئة الاتصالات والفضاء والتقنية (CST)، بعيدًا عن الأجهزة غير المرخصة التي تُعرّضك للمساءلة النظامية.</p>
         </div>
-        <div class="card">
-          <div class="card-icon">🧰</div>
-          <h3>تقييم ميداني قبل التركيب</h3>
+        <div class="card-base">
+          <div class="icon-tile"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg></div>
+          <h4 class="t-h5">تقييم ميداني قبل التركيب</h4>
           <p>نزور الموقع ونقيّم التغطية الفعلية قبل اقتراح الحل المناسب، بدلًا من حل واحد يناسب الجميع.</p>
         </div>
-        <div class="card">
-          <div class="card-icon">🤝</div>
-          <h3>شراكة بعد التسليم</h3>
+        <div class="card-base">
+          <div class="icon-tile"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 15c2-5 6-6 8-6s6 1 8 6M12 9V4M8 20h8"/></svg></div>
+          <h4 class="t-h5">شراكة بعد التسليم</h4>
           <p>الدعم لا ينتهي عند التركيب أو إطلاق النظام؛ نبقى معك للمتابعة والصيانة.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <section class="section section--tight">
-    <div class="container">
-      <div class="cta-banner">
-        <div>
-          <h2>جاهز لتحسين اتصال مبناك أو بناء نظامك الخاص؟</h2>
-          <p>تواصل معنا اليوم وسيقوم فريقنا بالرد على طلبك وتقييم احتياجك.</p>
-        </div>
-        <div class="hero-actions">
-          <a href="contact.html" class="btn btn-cta">اطلب عرض سعر</a>
-          <a href="https://wa.me/966583883398" class="btn btn-whatsapp" target="_blank" rel="noopener">واتساب</a>
-        </div>
-      </div>
+  <section class="cta">
+    <h2 class="t-h1">جاهز لتحسين اتصال مبناك أو بناء نظامك الخاص؟</h2>
+    <p>تواصل معنا اليوم وسيقوم فريقنا بالرد على طلبك وتقييم احتياجك.</p>
+    <div class="row">
+      <a href="contact.html" class="btn btn-primary">اطلب عرض سعر</a>
+      <a href="https://wa.me/966583883398" class="btn btn-secondary" target="_blank" rel="noopener">واتساب</a>
     </div>
   </section>
 </main>
 
-<footer class="site-footer">
-  <div class="container">
-    <div class="footer-grid">
-      <div class="footer-brand">
-        <a href="index.html" class="brand">
-          <img src="../assets/img/logo.png" alt="شعار شبكات الأسطورة" width="42" height="42" />
-          <span class="brand-name">شبكات الأسطورة<span>حلول شبكات وبرمجيات</span></span>
-        </a>
-        <p>معززات اتصال 5G، أنظمة استقبال فضائي مركزية للمباني، وتطوير برمجيات مخصصة للشركات والمنشآت في المملكة العربية السعودية.</p>
-        <div class="social-row">
-          <a href="#" aria-label="X" class="todo" style="display:none">X</a>
-          <a href="#" aria-label="Instagram" class="todo" style="display:none">IG</a>
-          <a href="#" aria-label="LinkedIn" class="todo" style="display:none">in</a>
-        </div>
-      </div>
-      <div class="footer-col">
-        <h4>الشركة</h4>
-        <ul>
-          <li><a href="about.html">من نحن</a></li>
-          <li><a href="network.html">الشبكات</a></li>
-          <li><a href="software.html">تطوير البرمجيات</a></li>
-          <li><a href="security.html">الأمن والحماية</a></li>
-          <li><a href="contact.html">اتصل بنا</a></li>
-        </ul>
-      </div>
-      <div class="footer-col">
-        <h4>القانونية</h4>
-        <ul>
-          <li><a href="privacy.html">سياسة الخصوصية</a></li>
-          <li><a href="terms.html">الشروط والأحكام</a></li>
-        </ul>
-      </div>
-      <div class="footer-col">
-        <h4>تواصل معنا</h4>
-        <ul>
-          <li><a href="tel:+966583883398">0583883398</a></li>
-          <li><strong>المبيعات:</strong> <a href="mailto:sales@alasturah.com">sales@alasturah.com</a></li>
-          <li><strong>الدعم الفني:</strong> <a href="mailto:support@alasturah.com">support@alasturah.com</a></li>
-        </ul>
+<footer class="footer">
+  <div class="foot-grid">
+    <div class="foot-brand">
+      <a href="index.html" class="wordmark">
+        <img src="../assets/img/logo.png" alt="شعار شبكات الأسطورة" width="42" height="42" />
+        شبكات الأسطورة
+      </a>
+      <p>معززات اتصال 5G، أنظمة استقبال فضائي مركزية للمباني، وتطوير برمجيات مخصصة للشركات والمنشآت في المملكة العربية السعودية.</p>
+      <div class="social-row">
+        <a href="#" aria-label="X" class="todo" style="display:none">X</a>
+        <a href="#" aria-label="Instagram" class="todo" style="display:none">IG</a>
+        <a href="#" aria-label="LinkedIn" class="todo" style="display:none">in</a>
       </div>
     </div>
-    <div class="footer-legal">
-      <span>© <span data-year></span> مؤسسة شبكات الأسطورة المميزة. جميع الحقوق محفوظة.</span>
-      <span>سجل تجاري: 7053859943 · الرقم الضريبي: 312152074400003</span>
+    <div class="foot-col">
+      <h5>الشركة</h5>
+      <a class="first" href="about.html">من نحن</a>
+      <a href="network.html">الشبكات</a>
+      <a href="software.html">تطوير البرمجيات</a>
+      <a href="security.html">الأمن والحماية</a>
+      <a href="contact.html">اتصل بنا</a>
     </div>
+    <div class="foot-col">
+      <h5>القانونية</h5>
+      <a class="first" href="privacy.html">سياسة الخصوصية</a>
+      <a href="terms.html">الشروط والأحكام</a>
+    </div>
+    <div class="foot-col">
+      <h5>تواصل معنا</h5>
+      <a class="first" href="tel:+966583883398">0583883398</a>
+      <a href="mailto:sales@alasturah.com">المبيعات: sales@alasturah.com</a>
+      <a href="mailto:support@alasturah.com">الدعم الفني: support@alasturah.com</a>
+    </div>
+  </div>
+  <div class="foot-bottom">
+    <span>© <span data-year></span> مؤسسة شبكات الأسطورة المميزة. جميع الحقوق محفوظة.</span>
+    <span>سجل تجاري: 7053859943 · الرقم الضريبي: 312152074400003</span>
   </div>
 </footer>
 
