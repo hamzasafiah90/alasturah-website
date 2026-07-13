@@ -140,6 +140,7 @@ html[lang="ar"] .eyebrow { letter-spacing: 0; text-transform: none; font-size: 1
 .nav-links a:hover, .nav-links a.active { color: var(--ink); }
 .nav-right { display: flex; align-items: center; gap: 12px; }
 .lang { font-size: 14px; font-weight: 500; color: var(--steel); padding: 8px 12px; border-radius: var(--r-md); }
+.nav-toggle { display: none; }
 .lang:hover { background: var(--surface); }
 
 /* ---------- 6. HERO (sky band) ---------- */
@@ -215,7 +216,12 @@ textarea.text-input { height: auto; min-height: 120px; }
 
 /* ---------- 11. RESPONSIVE ---------- */
 @media (max-width: 1023px) {
-  .nav-links { display: none; }
+  .nav-toggle { display: inline-flex; width: 40px; height: 40px; border-radius: var(--r-full); background: var(--canvas); border: 1px solid var(--hairline); cursor: pointer; align-items: center; justify-content: center; padding: 0; }
+  .nav-toggle svg { width: 18px; height: 18px; stroke: var(--ink); }
+  .nav-links { display: none; position: fixed; top: 64px; left: 0; right: 0; background: var(--canvas); border-bottom: 1px solid var(--hairline); flex-direction: column; padding: var(--sp-sm) var(--sp-md); z-index: 49; }
+  .nav-links.open { display: flex; }
+  .nav-links a { padding: 12px; min-height: 44px; display: flex; align-items: center; border-radius: var(--r-md); }
+  .nav-links a:hover { background: var(--surface); }
   .hero h1 { font-size: 56px; letter-spacing: calc(var(--track-display)); }
   html[lang="ar"] .hero h1 { font-size: 50px; }
   .grid-3 { grid-template-columns: 1fr 1fr; }
@@ -235,6 +241,8 @@ textarea.text-input { height: auto; min-height: 120px; }
   .btn { padding: 13px 22px; } /* 44px touch target */
   .hero-cta { flex-direction: column; align-items: center; }
   .foot-grid { grid-template-columns: 1fr; }
+  .nav-toggle { width: 44px; height: 44px; }
+  .nav-right .btn-primary { display: none; }
 }
 @media (prefers-reduced-motion: reduce) {
   * { transition: none !important; scroll-behavior: auto !important; }
