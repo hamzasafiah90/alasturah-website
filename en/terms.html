@@ -9,84 +9,128 @@
 <link rel="canonical" href="https://alasturah.com/en/terms.html" />
 <link rel="alternate" hreflang="en" href="https://alasturah.com/en/terms.html" />
 <link rel="alternate" hreflang="ar" href="https://alasturah.com/ar/terms.html" />
-<link rel="icon" href="../assets/img/favicon.svg" type="image/svg+xml" />
+<link rel="icon" href="../assets/img/favicon.png" type="image/png" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet" />
-<link rel="stylesheet" href="../assets/css/styles.css" />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="../assets/css/design-system.css" />
+<style>
+  /* Page-specific: legal-page prose needs a disclaimer callout + generic bulleted-list styling + h2 rhythm across many sequential sections — not covered by shared components */
+  .prose h2 { margin-top: 40px; }
+  .prose ul { display: flex; flex-direction: column; gap: 8px; margin-top: 12px; padding-inline-start: 20px; list-style: disc; }
+  .prose li { font-size: 15px; color: var(--steel); }
+  .disclaimer-box { background: var(--surface); border: 1px solid var(--hairline); border-radius: var(--r-md); padding: 20px 24px; margin-bottom: 8px; color: var(--slate); font-weight: 600; font-size: 15px; }
+</style>
 </head>
 <body>
 
-<header class="site-header">
-  <div class="container nav">
-    <a href="index.html" class="brand">
-      <img src="../assets/img/logo.png" alt="Shabakat Alasturah logo" width="42" height="42" />
-      <span class="brand-name">Shabakat Alasturah<span>Network &amp; Software Solutions</span></span>
-    </a>
-    <nav class="nav-links" id="nav-links">
-      <a href="index.html">Home</a>
-      <a href="about.html">About</a>
-      <a href="network.html">Network</a>
-      <a href="software.html">Software Development</a>
-      <a href="security.html">Security</a>
-      <a href="contact.html">Contact</a>
-    </nav>
-    <div class="nav-actions">
-      <a class="lang-switch" href="../ar/terms.html">العربية</a>
+<nav class="nav">
+  <div class="nav-inner">
+    <div class="nav-left">
+      <a href="index.html" class="wordmark">
+        <img src="../assets/img/logo.png" alt="Shabakat Alasturah logo" width="42" height="42" />
+        Shabakat Alasturah
+      </a>
+      <div class="nav-links" id="nav-links">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="network.html">Network</a>
+        <a href="software.html">Software Development</a>
+        <a href="security.html">Security</a>
+        <a href="contact.html">Contact</a>
+      </div>
+    </div>
+    <div class="nav-right">
+      <a href="../ar/terms.html" class="lang">العربية</a>
+      <a href="contact.html" class="btn btn-primary">Request a Quote</a>
       <button class="nav-toggle" aria-label="Open menu" aria-expanded="false">
-        <span></span><span></span><span></span>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
       </button>
     </div>
+  </div>
+</nav>
+
+<header class="page-hero">
+  <div class="page-hero-inner">
+    <h1 class="t-h1">Terms & Conditions</h1>
+    <p>Last updated: June 27, 2025</p>
   </div>
 </header>
 
 <main>
-  <section class="page-header">
-    <div class="container">
-      <h1>Terms & Conditions</h1>
-      <p>Last updated: June 27, 2025</p>
-    </div>
-  </section>
-
-  <section class="section">
+  <section class="band">
     <div class="container prose">
       <div class="disclaimer-box">
         This is a general draft of website terms of use, intended as a starting point only. Have it reviewed by a licensed legal advisor in Saudi Arabia before final publication.
       </div>
 
-      <h2>1. Acceptance of Terms</h2>
+      <h2 class="t-h2">1. Acceptance of Terms</h2>
       <p>By using this website, you agree to these terms and conditions. If you do not agree, please do not use the website.</p>
 
-      <h2>2. Scope of Services</h2>
+      <h2 class="t-h2">2. Scope of Services</h2>
       <p>This website provides information about our products (5G boosters and centralized satellite systems) and services (software development). Any quote request or contact form submission through the website is not a binding order until formally confirmed by our company.</p>
 
-      <h2>3. Regulatory Compliance for Products</h2>
+      <h2 class="t-h2">3. Regulatory Compliance for Products</h2>
       <p>The signal boosters we supply are approved by the Communications, Space & Technology Commission (CST) in Saudi Arabia. Use of any unlicensed signal booster is prohibited under the Telecommunications Act.</p>
 
-      <h2>4. Intellectual Property</h2>
+      <h2 class="t-h2">4. Intellectual Property</h2>
       <p>All content on this website, including the logo, text, and design, is owned by Shabakat Alasturah and may not be reused without prior written permission.</p>
 
-      <h2>5. Limitation of Liability</h2>
+      <h2 class="t-h2">5. Limitation of Liability</h2>
       <p>We aim to provide accurate information, but content on this website is for general informational purposes and does not constitute a final binding offer. Final pricing and specifications are confirmed through direct communication with our team.</p>
 
-      <h2>6. Governing Law</h2>
+      <h2 class="t-h2">6. Governing Law</h2>
       <p>These terms are governed by and interpreted in accordance with the laws and regulations of Saudi Arabia.</p>
 
-      <h2>7. Contact</h2>
+      <h2 class="t-h2">7. Contact</h2>
       <p>For any question about these terms, contact us at <a href="mailto:support@alasturah.com">support@alasturah.com</a>.</p>
     </div>
   </section>
 </main>
 
-<footer class="site-footer">
-  <div class="container">
-    <div class="footer-legal">
-      <span>© <span data-year></span> Shabakat Alasturah Almumayizah Est. All rights reserved.</span>
-      <span><a href="privacy.html">Privacy Policy</a></span>
+<footer class="footer">
+  <div class="foot-grid">
+    <div class="foot-brand">
+      <a href="index.html" class="wordmark">
+        <img src="../assets/img/logo.png" alt="Shabakat Alasturah logo" width="42" height="42" />
+        Shabakat Alasturah
+      </a>
+      <p>5G boosters, centralized satellite systems for buildings, and custom software development for businesses and properties in Saudi Arabia.</p>
+      <div class="social-row">
+        <a href="#" aria-label="X" class="todo" style="display:none">X</a>
+        <a href="#" aria-label="Instagram" class="todo" style="display:none">IG</a>
+        <a href="#" aria-label="LinkedIn" class="todo" style="display:none">in</a>
+      </div>
     </div>
+    <div class="foot-col">
+      <h5>Company</h5>
+      <a class="first" href="about.html">About</a>
+      <a href="network.html">Network</a>
+      <a href="software.html">Software Development</a>
+      <a href="security.html">Security</a>
+      <a href="contact.html">Contact</a>
+    </div>
+    <div class="foot-col">
+      <h5>Legal</h5>
+      <a class="first" href="privacy.html">Privacy Policy</a>
+      <a href="terms.html">Terms &amp; Conditions</a>
+    </div>
+    <div class="foot-col">
+      <h5>Contact</h5>
+      <a class="first" href="tel:+966583883398">+966 58 388 3398</a>
+      <a href="mailto:sales@alasturah.com">Sales: sales@alasturah.com</a>
+      <a href="mailto:support@alasturah.com">Support: support@alasturah.com</a>
+    </div>
+  </div>
+  <div class="foot-bottom">
+    <span>© <span data-year></span> Shabakat Alasturah Almumayizah Est. All rights reserved.</span>
+    <span>CR No.: 7053859943 · VAT No.: 312152074400003</span>
   </div>
 </footer>
 
+<a href="https://wa.me/966583883398" class="whatsapp-float" aria-label="Chat on WhatsApp" target="_blank" rel="noopener">
+  <svg width="28" height="28" viewBox="0 0 24 24" fill="white"><path d="M17.6 6.32A8.86 8.86 0 0 0 12.05 3.6c-4.9 0-8.9 4-8.9 8.9 0 1.57.42 3.1 1.2 4.45L3 21l4.18-1.32a8.92 8.92 0 0 0 4.87 1.43h.01c4.9 0 8.9-4 8.9-8.9 0-2.38-.93-4.6-2.36-6.27Zm-5.55 13.7h-.01a7.4 7.4 0 0 1-3.77-1.03l-.27-.16-2.8.88.9-2.73-.18-.28a7.4 7.4 0 0 1-1.14-3.94c0-4.08 3.32-7.4 7.4-7.4 1.98 0 3.84.77 5.23 2.17a7.34 7.34 0 0 1 2.17 5.24c0 4.08-3.32 7.4-7.4 7.4Zm4.06-5.55c-.22-.11-1.3-.64-1.5-.71-.2-.07-.35-.11-.49.11-.15.22-.57.71-.7.86-.13.15-.26.16-.48.05-.65-.32-1.3-.7-1.91-1.27-.55-.49-.95-1.05-1.27-1.65-.13-.22 0-.34.13-.46.13-.13.29-.32.43-.49.13-.16.18-.27.27-.45.09-.18.04-.34-.04-.46-.08-.12-.5-1.21-.69-1.66-.18-.43-.37-.37-.5-.38-.13-.01-.28-.01-.43-.01-.15 0-.39.05-.6.27-.21.22-.81.79-.81 1.93s.83 2.24.95 2.4c.11.15 1.57 2.4 3.8 3.27 1.9.74 2.29.6 2.7.56.42-.04 1.3-.53 1.49-1.04.18-.51.18-.95.13-1.04-.05-.1-.2-.16-.42-.27Z"/></svg>
+</a>
 <script src="../assets/js/main.js"></script>
 </body>
 </html>
