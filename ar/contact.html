@@ -18,12 +18,17 @@
   /* Page-specific: contact form 2-col field grid + contact-detail rows, not covered by shared components */
   .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 24px; }
   .form-field.full { grid-column: 1 / -1; }
-  .form-status { margin-top: 12px; font-size: 14px; color: var(--steel); }
+  .form-status { margin-top: 0; font-size: 14px; color: var(--steel); }
+  .form-status:not(:empty) { margin-top: 12px; }
   .contact-panel { display: flex; flex-direction: column; gap: 20px; }
   .contact-row { display: flex; align-items: center; gap: 12px; font-size: 15px; color: var(--slate); }
   .contact-row .icon-tile { flex: none; margin-bottom: 0; }
   .contact-row a { color: var(--slate); }
   .contact-row a:hover { color: var(--ink); }
+  /* Fix 3: align Send Request / WhatsApp buttons to a common bottom edge across the two grid-2 columns */
+  #contact-form { display: flex; flex-direction: column; }
+  #contact-form button[type="submit"] { margin-top: auto; }
+  .contact-panel .btn-primary { margin-top: auto; }
   @media (max-width: 767px) {
     .form-grid { grid-template-columns: 1fr; }
   }
@@ -67,7 +72,7 @@
 <main>
   <section class="band">
     <div class="container">
-      <div class="grid-2" style="align-items:flex-start;">
+      <div class="grid-2">
         <form id="contact-form" action="https://api.web3forms.com/submit" method="POST">
           <input type="hidden" name="access_key" value="44f6399d-34b0-475e-a9f2-a4e2a8cbbc22">
           <input type="hidden" name="subject" value="رسالة جديدة من موقع شبكات الأسطورة">
@@ -127,7 +132,7 @@
             <div class="icon-tile"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 7a5 5 0 1 0 0 10 5 5 0 0 0 0-10Zm0-5a10 10 0 1 0 0 20 10 10 0 0 0 0-20Zm0 2a8 8 0 1 1 0 16 8 8 0 0 1 0-16Z"/></svg></div>
             <span>الأحد – الخميس، 9 صباحاً – 6 مساءً</span>
           </div>
-          <a href="https://wa.me/966583883398" class="btn btn-primary" target="_blank" rel="noopener" style="margin-top:24px; width:100%; text-align:center;">تواصل عبر واتساب</a>
+          <a href="https://wa.me/966583883398" class="btn btn-primary" target="_blank" rel="noopener" style="width:100%; text-align:center;">تواصل عبر واتساب</a>
         </div>
       </div>
     </div>

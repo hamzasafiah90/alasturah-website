@@ -155,6 +155,7 @@ html[lang="ar"] .eyebrow { letter-spacing: 0; text-transform: none; font-size: 1
   text-align: center; position: relative; overflow: hidden;
 }
 .hero .cloud { position: absolute; border-radius: var(--r-full); background: rgba(255,255,255,.3); filter: blur(40px); pointer-events: none; }
+.hero .eyebrow { color: var(--slate); }
 .hero-inner { position: relative; max-width: 880px; margin-inline: auto; }
 .hero h1 { font-size: 72px; font-weight: 600; line-height: 1.05; letter-spacing: var(--track-hero); }
 html[lang="ar"] .hero h1 { font-size: 64px; line-height: 1.15; }
@@ -213,6 +214,7 @@ html[dir="rtl"] .card-feature:hover .arr { transform: translateX(-3px); }
   padding: var(--sp-sm) var(--sp-md);
 }
 textarea.text-input { height: auto; min-height: 120px; }
+select.text-input { padding-block: 0; }
 .text-input:focus { outline: none; border: 2px solid var(--brand-green); }
 .form-label { font-size: 14px; font-weight: 500; display: block; margin-bottom: 6px; }
 
