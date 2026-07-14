@@ -139,7 +139,7 @@ html[lang="ar"] .eyebrow { letter-spacing: 0; text-transform: none; font-size: 1
 .nav-inner { max-width: 1280px; margin-inline: auto; padding-inline: 32px; height: 64px; display: flex; align-items: center; justify-content: space-between; }
 .nav-left  { display: flex; align-items: center; gap: 40px; }
 .wordmark  { font-size: 16px; font-weight: 600; display: flex; align-items: center; gap: 9px; }
-.wordmark img { height: 36px; width: auto; display: block; } /* real registered mark — never redraw */
+.wordmark img { height: 48px; width: auto; display: block; } /* real registered mark — never redraw */
 .nav-links { display: flex; gap: 28px; }
 .nav-links a { font-size: 14px; font-weight: 500; color: var(--steel); transition: color .15s ease; }
 .nav-links a:hover, .nav-links a.active { color: var(--ink); }
@@ -220,7 +220,7 @@ select.text-input { padding-block: 0; }
 
 /* ---------- 10. FOOTER ---------- */
 .footer { border-top: 1px solid var(--hairline); padding: var(--sp-section) 32px var(--sp-xxxl); }
-.footer .wordmark img { height: 44px; }
+.footer .wordmark img { height: 56px; }
 .foot-grid { max-width: 1280px; margin-inline: auto; display: grid; grid-template-columns: 2fr 1fr 1fr 1.4fr; gap: 48px; }
 .foot-col h5 { font-size: 14px; font-weight: 500; }
 .foot-col a { display: block; font-size: 14px; color: var(--steel); padding: 4px 0; }
