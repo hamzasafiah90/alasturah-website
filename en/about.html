@@ -12,176 +12,169 @@
 <link rel="icon" href="../assets/img/favicon.svg" type="image/svg+xml" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet" />
-<link rel="stylesheet" href="../assets/css/styles.css" />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="../assets/css/design-system.css" />
+<style>
+  /* Page-specific: Our Story has 4 sequential h2/p pairs in one .prose block —
+     not covered by the shared component, which only offsets a heading after an icon-tile */
+  .prose p + h2 { margin-top: 40px; }
+</style>
 </head>
 <body>
 
-<header class="site-header">
-  <div class="container nav">
-    <a href="index.html" class="brand">
-      <img src="../assets/img/logo.png" alt="Shabakat Alasturah logo" width="42" height="42" />
-      <span class="brand-name">Shabakat Alasturah<span>Network &amp; Software Solutions</span></span>
-    </a>
-    <nav class="nav-links" id="nav-links">
-      <a href="index.html">Home</a>
-      <a href="about.html" class="active">About</a>
-      <a href="network.html">Network</a>
-      <a href="software.html">Software Development</a>
-      <a href="security.html">Security</a>
-      <a href="contact.html">Contact</a>
-    </nav>
-    <div class="nav-actions">
-      <a class="lang-switch" href="../ar/about.html">العربية</a>
-      <a class="btn btn-cta" href="contact.html">Request a Quote</a>
+<nav class="nav">
+  <div class="nav-inner">
+    <div class="nav-left">
+      <a href="index.html" class="wordmark">
+        <img src="../assets/img/logo.png" alt="Shabakat Alasturah logo" width="42" height="42" />
+        Shabakat Alasturah
+      </a>
+      <div class="nav-links" id="nav-links">
+        <a href="index.html">Home</a>
+        <a href="about.html" class="active">About</a>
+        <a href="network.html">Network</a>
+        <a href="software.html">Software Development</a>
+        <a href="security.html">Security</a>
+        <a href="contact.html">Contact</a>
+      </div>
+    </div>
+    <div class="nav-right">
+      <a href="../ar/about.html" class="lang">العربية</a>
+      <a href="contact.html" class="btn btn-primary">Request a Quote</a>
       <button class="nav-toggle" aria-label="Open menu" aria-expanded="false">
-        <span></span><span></span><span></span>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
       </button>
     </div>
+  </div>
+</nav>
+
+<header class="page-hero">
+  <div class="page-hero-inner">
+    <h1 class="t-h1">About Us</h1>
+    <p>A Saudi company bringing telecom engineering and software development together under one roof.</p>
   </div>
 </header>
 
 <main>
-  <section class="page-header">
-    <div class="container">
-      <h1>About Us</h1>
-      <p>A Saudi company bringing telecom engineering and software development together under one roof.</p>
-    </div>
-  </section>
-
-  <section class="section">
+  <section class="band">
     <div class="container prose">
-      <h2>Our Story</h2>
+      <h2 class="t-h2">Our Story</h2>
       <p>Shabakat Alasturah (Shabakat Alasturah Almumayizah Establishment) is a Saudi company founded to deliver reliable connectivity solutions for buildings and facilities, alongside custom software development built for the needs of local businesses. We bring together a telecom engineering team and a software development team, so clients get integrated solutions instead of juggling multiple vendors.</p>
 
-      <h2>What We Do</h2>
+      <h2 class="t-h2">What We Do</h2>
       <p>We operate across three service lines. Network solutions cover 5G boosters, centralized satellite systems, and enterprise infrastructure including fiber, wireless, and data centers. Physical security covers AI video intelligence and access control systems. Software development covers custom applications and systems built around how a business actually works, rather than off-the-shelf tools that don't fit.</p>
 
-      <h2>Our Approach to Quality & Compliance</h2>
-      <p>We make sure the connectivity equipment we supply complies with the regulations of the Communications, Space & Technology Commission (CST) in Saudi Arabia, because unlicensed boosters can degrade mobile networks and expose users to legal liability. This is a core part of how we work, not an optional extra.</p>
+      <h2 class="t-h2">Our Approach to Quality &amp; Compliance</h2>
+      <p>We make sure the connectivity equipment we supply complies with the regulations of the Communications, Space &amp; Technology Commission (CST) in Saudi Arabia, because unlicensed boosters can degrade mobile networks and expose users to legal liability. This is a core part of how we work, not an optional extra.</p>
 
-      <h2>Where We Operate</h2>
+      <h2 class="t-h2">Where We Operate</h2>
       <p>We serve individuals, businesses, and property developers across Saudi Arabia.</p>
     </div>
   </section>
 
-  <section class="section section--alt">
+  <section class="band band-surface">
     <div class="container">
-      <div class="section-head center">
+      <div class="sec-head center">
         <span class="eyebrow">Our Values</span>
-        <h2>What guides the way we work</h2>
+        <h2 class="t-h2">What guides the way we work</h2>
       </div>
-      <div class="grid grid-3">
-        <div class="card">
-          <div class="card-icon">✅</div>
-          <h3>Regulatory Compliance</h3>
+      <div class="grid-3">
+        <div class="card-base">
+          <div class="icon-tile"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 12l2 2 4-5"/><circle cx="12" cy="12" r="9"/></svg></div>
+          <h3 class="t-h4">Regulatory Compliance</h3>
           <p>We don't deal in unapproved connectivity equipment, even when it would be faster or cheaper short-term.</p>
         </div>
-        <div class="card">
-          <div class="card-icon">🎯</div>
-          <h3>Tailored Solutions</h3>
+        <div class="card-base">
+          <div class="icon-tile"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1" fill="currentColor" stroke="none"/></svg></div>
+          <h3 class="t-h4">Tailored Solutions</h3>
           <p>Every building and business is different, so we assess the actual need before proposing a solution.</p>
         </div>
-        <div class="card">
-          <div class="card-icon">🤝</div>
-          <h3>Long-Term Relationships</h3>
+        <div class="card-base">
+          <div class="icon-tile"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="12" r="6"/><circle cx="15" cy="12" r="6"/></svg></div>
+          <h3 class="t-h4">Long-Term Relationships</h3>
           <p>We aim to be the partner clients return to for any expansion or new need.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <section class="section section--alt">
+  <section class="band band-surface">
     <div class="container">
-      <div class="section-head center">
+      <div class="sec-head center">
         <span class="eyebrow">How We Work</span>
-        <h2>Deployment Journey</h2>
+        <h2 class="t-h2">Deployment Journey</h2>
       </div>
-      <div class="steps">
+      <div class="step-row steps-4">
         <div class="step">
-          <div class="step-num">1</div>
-          <h3>Assessment</h3>
-          <p class="muted">Site survey and auditing.</p>
+          <span class="t-micro-up">Phase 1</span>
+          <h3 class="t-h5">Assessment</h3>
+          <p>Site survey and auditing.</p>
         </div>
         <div class="step">
-          <div class="step-num">2</div>
-          <h3>Core Build</h3>
-          <p class="muted">Cabling and backbone networking.</p>
+          <span class="t-micro-up">Phase 2</span>
+          <h3 class="t-h5">Core Build</h3>
+          <p>Cabling and backbone networking.</p>
         </div>
         <div class="step">
-          <div class="step-num">3</div>
-          <h3>Endpoints</h3>
-          <p class="muted">CCTV, access control, and Wi-Fi rollout.</p>
+          <span class="t-micro-up">Phase 3</span>
+          <h3 class="t-h5">Endpoints</h3>
+          <p>CCTV, access control, and Wi-Fi rollout.</p>
         </div>
         <div class="step">
-          <div class="step-num">4</div>
-          <h3>Optimization</h3>
-          <p class="muted">AI calibration and 24/7 monitoring.</p>
+          <span class="t-micro-up">Phase 4</span>
+          <h3 class="t-h5">Optimization</h3>
+          <p>AI calibration and 24/7 monitoring.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <section class="section section--tight">
-    <div class="container">
-      <div class="cta-banner">
-        <div>
-          <h2>Want to learn more about our solutions?</h2>
-          <p>Reach out and we'll guide you to the best fit for your building or business.</p>
-        </div>
-        <div class="hero-actions">
-          <a href="contact.html" class="btn btn-cta">Contact Us</a>
-        </div>
-      </div>
+  <section class="cta">
+    <h2 class="t-h2">Want to learn more about our solutions?</h2>
+    <p>Reach out and we'll guide you to the best fit for your building or business.</p>
+    <div class="row">
+      <a href="contact.html" class="btn btn-primary">Contact Us</a>
     </div>
   </section>
 </main>
 
-<footer class="site-footer">
-  <div class="container">
-    <div class="footer-grid">
-      <div class="footer-brand">
-        <a href="index.html" class="brand">
-          <img src="../assets/img/logo.png" alt="Shabakat Alasturah logo" width="42" height="42" />
-          <span class="brand-name">Shabakat Alasturah<span>Network &amp; Software Solutions</span></span>
-        </a>
-        <p>5G boosters, centralized satellite systems for buildings, and custom software development for businesses and properties in Saudi Arabia.</p>
-        <div class="social-row">
-          <a href="#" aria-label="X" class="todo" style="display:none">X</a>
-          <a href="#" aria-label="Instagram" class="todo" style="display:none">IG</a>
-          <a href="#" aria-label="LinkedIn" class="todo" style="display:none">in</a>
-        </div>
-      </div>
-      <div class="footer-col">
-        <h4>Company</h4>
-        <ul>
-          <li><a href="about.html">About</a></li>
-          <li><a href="network.html">Network</a></li>
-          <li><a href="software.html">Software Development</a></li>
-          <li><a href="security.html">Security</a></li>
-          <li><a href="contact.html">Contact</a></li>
-        </ul>
-      </div>
-      <div class="footer-col">
-        <h4>Legal</h4>
-        <ul>
-          <li><a href="privacy.html">Privacy Policy</a></li>
-          <li><a href="terms.html">Terms & Conditions</a></li>
-        </ul>
-      </div>
-      <div class="footer-col">
-        <h4>Contact</h4>
-        <ul>
-          <li><a href="tel:+966583883398">+966 58 388 3398</a></li>
-          <li><strong>Sales:</strong> <a href="mailto:sales@alasturah.com">sales@alasturah.com</a></li>
-          <li><strong>Support:</strong> <a href="mailto:support@alasturah.com">support@alasturah.com</a></li>
-        </ul>
+<footer class="footer">
+  <div class="foot-grid">
+    <div class="foot-brand">
+      <a href="index.html" class="wordmark">
+        <img src="../assets/img/logo.png" alt="Shabakat Alasturah logo" width="42" height="42" />
+        Shabakat Alasturah
+      </a>
+      <p>5G boosters, centralized satellite systems for buildings, and custom software development for businesses and properties in Saudi Arabia.</p>
+      <div class="social-row">
+        <a href="#" aria-label="X" class="todo" style="display:none">X</a>
+        <a href="#" aria-label="Instagram" class="todo" style="display:none">IG</a>
+        <a href="#" aria-label="LinkedIn" class="todo" style="display:none">in</a>
       </div>
     </div>
-    <div class="footer-legal">
-      <span>© <span data-year></span> Shabakat Alasturah Almumayizah Est. All rights reserved.</span>
-      <span>CR No.: 7053859943 · VAT No.: 312152074400003</span>
+    <div class="foot-col">
+      <h5>Company</h5>
+      <a class="first" href="about.html">About</a>
+      <a href="network.html">Network</a>
+      <a href="software.html">Software Development</a>
+      <a href="security.html">Security</a>
+      <a href="contact.html">Contact</a>
     </div>
+    <div class="foot-col">
+      <h5>Legal</h5>
+      <a class="first" href="privacy.html">Privacy Policy</a>
+      <a href="terms.html">Terms &amp; Conditions</a>
+    </div>
+    <div class="foot-col">
+      <h5>Contact</h5>
+      <a class="first" href="tel:+966583883398">+966 58 388 3398</a>
+      <a href="mailto:sales@alasturah.com">Sales: sales@alasturah.com</a>
+      <a href="mailto:support@alasturah.com">Support: support@alasturah.com</a>
+    </div>
+  </div>
+  <div class="foot-bottom">
+    <span>© <span data-year></span> Shabakat Alasturah Almumayizah Est. All rights reserved.</span>
+    <span>CR No.: 7053859943 · VAT No.: 312152074400003</span>
   </div>
 </footer>
 

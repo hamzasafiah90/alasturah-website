@@ -252,6 +252,12 @@ textarea.text-input { height: auto; min-height: 120px; }
 .whatsapp-float { position: fixed; bottom: 26px; inset-inline-end: 26px; z-index: 200; background: #25D366; width: 58px; height: 58px; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 8px 24px rgba(0,0,0,.2); transition: transform .15s ease; }
 .whatsapp-float:hover { transform: scale(1.08); }
 
+.step-row { display: grid; grid-template-columns: repeat(5, 1fr); gap: 16px; margin-top: 48px; }
+.step-row.steps-4 { grid-template-columns: repeat(4, 1fr); }
+.step { background: var(--canvas); border: 1px solid var(--hairline); border-radius: var(--r-lg); padding: var(--sp-xl); }
+.step h3 { margin-top: 12px; }
+.step p { font-size: 14px; color: var(--steel); margin-top: 8px; }
+
 /* ---------- 11. RESPONSIVE ---------- */
 @media (max-width: 1023px) {
   .nav-toggle { display: inline-flex; width: 40px; height: 40px; border-radius: var(--r-full); background: var(--canvas); border: 1px solid var(--hairline); cursor: pointer; align-items: center; justify-content: center; padding: 0; }
@@ -263,6 +269,7 @@ textarea.text-input { height: auto; min-height: 120px; }
   .hero h1 { font-size: 56px; letter-spacing: calc(var(--track-display)); }
   html[lang="ar"] .hero h1 { font-size: 50px; }
   .grid-3 { grid-template-columns: 1fr 1fr; }
+  .step-row, .step-row.steps-4 { grid-template-columns: repeat(3, 1fr); }
 }
 @media (max-width: 767px) {
   .hero { padding: 80px 20px 64px; }
@@ -273,6 +280,7 @@ textarea.text-input { height: auto; min-height: 120px; }
   .grid-2 { grid-template-columns: 1fr; }
   .foot-grid { grid-template-columns: 1fr 1fr; }
   .band { padding: var(--sp-section) 0; }
+  .step-row, .step-row.steps-4 { grid-template-columns: 1fr 1fr; }
 }
 @media (max-width: 479px) {
   .hero h1 { font-size: 36px; }
@@ -283,6 +291,7 @@ textarea.text-input { height: auto; min-height: 120px; }
   .nav-toggle { width: 44px; height: 44px; }
   .nav-right .btn-primary { display: none; }
   .cta .row { flex-direction: column; align-items: center; }
+  .step-row, .step-row.steps-4 { grid-template-columns: 1fr; }
 }
 @media (prefers-reduced-motion: reduce) {
   * { transition: none !important; scroll-behavior: auto !important; }

@@ -12,176 +12,169 @@
 <link rel="icon" href="../assets/img/favicon.svg" type="image/svg+xml" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet" />
-<link rel="stylesheet" href="../assets/css/styles.css" />
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="../assets/css/design-system.css" />
+<style>
+  /* Page-specific: Our Story has 4 sequential h2/p pairs in one .prose block —
+     not covered by the shared component, which only offsets a heading after an icon-tile */
+  .prose p + h2 { margin-top: 40px; }
+</style>
 </head>
 <body>
 
-<header class="site-header">
-  <div class="container nav">
-    <a href="index.html" class="brand">
-      <img src="../assets/img/logo.png" alt="شعار شبكات الأسطورة" width="42" height="42" />
-      <span class="brand-name">شبكات الأسطورة<span>حلول شبكات وبرمجيات</span></span>
-    </a>
-    <nav class="nav-links" id="nav-links">
-      <a href="index.html">الرئيسية</a>
-      <a href="about.html" class="active">من نحن</a>
-      <a href="network.html">الشبكات</a>
-      <a href="software.html">تطوير البرمجيات</a>
-      <a href="security.html">الأمن والحماية</a>
-      <a href="contact.html">اتصل بنا</a>
-    </nav>
-    <div class="nav-actions">
-      <a class="lang-switch" href="../en/about.html">EN</a>
-      <a class="btn btn-cta" href="contact.html">اطلب عرض سعر</a>
+<nav class="nav">
+  <div class="nav-inner">
+    <div class="nav-left">
+      <a href="index.html" class="wordmark">
+        <img src="../assets/img/logo.png" alt="شعار شبكات الأسطورة" width="42" height="42" />
+        شبكات الأسطورة
+      </a>
+      <div class="nav-links" id="nav-links">
+        <a href="index.html">الرئيسية</a>
+        <a href="about.html" class="active">من نحن</a>
+        <a href="network.html">الشبكات</a>
+        <a href="software.html">تطوير البرمجيات</a>
+        <a href="security.html">الأمن والحماية</a>
+        <a href="contact.html">اتصل بنا</a>
+      </div>
+    </div>
+    <div class="nav-right">
+      <a href="../en/about.html" class="lang">EN</a>
+      <a href="contact.html" class="btn btn-primary">اطلب عرض سعر</a>
       <button class="nav-toggle" aria-label="فتح القائمة" aria-expanded="false">
-        <span></span><span></span><span></span>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
       </button>
     </div>
+  </div>
+</nav>
+
+<header class="page-hero">
+  <div class="page-hero-inner">
+    <h1 class="t-h1">من نحن</h1>
+    <p>شركة سعودية تجمع بين هندسة الاتصالات وتطوير البرمجيات في مكان واحد.</p>
   </div>
 </header>
 
 <main>
-  <section class="page-header">
-    <div class="container">
-      <h1>من نحن</h1>
-      <p>شركة سعودية تجمع بين هندسة الاتصالات وتطوير البرمجيات في مكان واحد.</p>
-    </div>
-  </section>
-
-  <section class="section">
+  <section class="band">
     <div class="container prose">
-      <h2>قصتنا</h2>
+      <h2 class="t-h2">قصتنا</h2>
       <p>شبكات الأسطورة (مؤسسة شبكات الأسطورة المميزة) شركة سعودية تأسست لتقديم حلول اتصال موثوقة للمباني والمنشآت، إلى جانب تطوير برمجيات مخصصة تواكب احتياجات الأعمال المحلية. جمعنا بين فريق هندسي متخصص في شبكات الاتصال وفريق تطوير برمجيات، لنقدّم لعملائنا حلولًا متكاملة بدلًا من التعامل مع أكثر من مزوّد لكل حاجة.</p>
 
-      <h2>ماذا نقدّم</h2>
+      <h2 class="t-h2">ماذا نقدّم</h2>
       <p>نعمل في ثلاثة مجالات رئيسية: حلول الشبكات وتشمل معززات اتصال 5G، أنظمة استقبال فضائي مركزية، وبنية تحتية للمؤسسات تشمل الألياف الضوئية، الشبكات اللاسلكية، ومراكز البيانات. الأمن المادي ويشمل أنظمة الذكاء الاصطناعي لمراقبة الفيديو والتحكم في الدخول. وتطوير البرمجيات، حيث نصمم وننفّذ تطبيقات وأنظمة مخصصة بدلًا من الحلول الجاهزة التي لا تناسب كل عمل.</p>
 
-      <h2>رؤيتنا في الجودة والامتثال</h2>
+      <h2 class="t-h2">رؤيتنا في الجودة والامتثال</h2>
       <p>نحرص على أن تكون أجهزة الاتصال التي نوفّرها متوافقة مع لوائح هيئة الاتصالات والفضاء والتقنية (CST) في المملكة العربية السعودية، لأن أي معزز اتصال غير مرخّص يمكن أن يؤثر سلبًا على شبكات الجوال ويُعرّض المستخدم للمساءلة النظامية. هذا الالتزام جزء أساسي من طريقة عملنا، وليس خيارًا إضافيًا.</p>
 
-      <h2>أين نعمل</h2>
+      <h2 class="t-h2">أين نعمل</h2>
       <p>نخدم عملاءنا من الأفراد والشركات والمطورين العقاريين في مختلف مناطق المملكة العربية السعودية.</p>
     </div>
   </section>
 
-  <section class="section section--alt">
+  <section class="band band-surface">
     <div class="container">
-      <div class="section-head center">
+      <div class="sec-head center">
         <span class="eyebrow">قيمنا</span>
-        <h2>ما يوجّه طريقة عملنا</h2>
+        <h2 class="t-h2">ما يوجّه طريقة عملنا</h2>
       </div>
-      <div class="grid grid-3">
-        <div class="card">
-          <div class="card-icon">✅</div>
-          <h3>الالتزام النظامي</h3>
+      <div class="grid-3">
+        <div class="card-base">
+          <div class="icon-tile"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 12l2 2 4-5"/><circle cx="12" cy="12" r="9"/></svg></div>
+          <h3 class="t-h4">الالتزام النظامي</h3>
           <p>لا نتعامل بأجهزة اتصال غير معتمدة، حتى لو كان ذلك أسرع أو أرخص على المدى القصير.</p>
         </div>
-        <div class="card">
-          <div class="card-icon">🎯</div>
-          <h3>حلول مخصصة</h3>
+        <div class="card-base">
+          <div class="icon-tile"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1" fill="currentColor" stroke="none"/></svg></div>
+          <h3 class="t-h4">حلول مخصصة</h3>
           <p>كل مبنى وكل عمل مختلف؛ لذلك نقيّم الحاجة الفعلية قبل اقتراح الحل.</p>
         </div>
-        <div class="card">
-          <div class="card-icon">🤝</div>
-          <h3>علاقة طويلة الأمد</h3>
+        <div class="card-base">
+          <div class="icon-tile"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="12" r="6"/><circle cx="15" cy="12" r="6"/></svg></div>
+          <h3 class="t-h4">علاقة طويلة الأمد</h3>
           <p>نهدف إلى أن نكون الجهة التي يعود إليها العميل عند أي توسعة أو احتياج جديد.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <section class="section section--alt">
+  <section class="band band-surface">
     <div class="container">
-      <div class="section-head center">
+      <div class="sec-head center">
         <span class="eyebrow">طريقة عملنا</span>
-        <h2>مراحل التنفيذ</h2>
+        <h2 class="t-h2">مراحل التنفيذ</h2>
       </div>
-      <div class="steps">
+      <div class="step-row steps-4">
         <div class="step">
-          <div class="step-num">1</div>
-          <h3>التقييم</h3>
-          <p class="muted">مسح الموقع والتدقيق الفني.</p>
+          <span class="t-micro-up">المرحلة 1</span>
+          <h3 class="t-h5">التقييم</h3>
+          <p>مسح الموقع والتدقيق الفني.</p>
         </div>
         <div class="step">
-          <div class="step-num">2</div>
-          <h3>البنية الأساسية</h3>
-          <p class="muted">الكابلات والشبكة الأساسية (Backbone).</p>
+          <span class="t-micro-up">المرحلة 2</span>
+          <h3 class="t-h5">البنية الأساسية</h3>
+          <p>الكابلات والشبكة الأساسية (Backbone).</p>
         </div>
         <div class="step">
-          <div class="step-num">3</div>
-          <h3>نقاط النهاية</h3>
-          <p class="muted">تركيب كاميرات المراقبة، التحكم في الدخول، والشبكة اللاسلكية.</p>
+          <span class="t-micro-up">المرحلة 3</span>
+          <h3 class="t-h5">نقاط النهاية</h3>
+          <p>تركيب كاميرات المراقبة، التحكم في الدخول، والشبكة اللاسلكية.</p>
         </div>
         <div class="step">
-          <div class="step-num">4</div>
-          <h3>التحسين</h3>
-          <p class="muted">معايرة أنظمة الذكاء الاصطناعي والمراقبة المستمرة على مدار الساعة.</p>
+          <span class="t-micro-up">المرحلة 4</span>
+          <h3 class="t-h5">التحسين</h3>
+          <p>معايرة أنظمة الذكاء الاصطناعي والمراقبة المستمرة على مدار الساعة.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <section class="section section--tight">
-    <div class="container">
-      <div class="cta-banner">
-        <div>
-          <h2>هل تريد التعرف على حلولنا بتفصيل أكبر؟</h2>
-          <p>تواصل معنا وسنرشدك لأفضل حل يناسب مبناك أو عملك.</p>
-        </div>
-        <div class="hero-actions">
-          <a href="contact.html" class="btn btn-cta">تواصل معنا</a>
-        </div>
-      </div>
+  <section class="cta">
+    <h2 class="t-h2">هل تريد التعرف على حلولنا بتفصيل أكبر؟</h2>
+    <p>تواصل معنا وسنرشدك لأفضل حل يناسب مبناك أو عملك.</p>
+    <div class="row">
+      <a href="contact.html" class="btn btn-primary">تواصل معنا</a>
     </div>
   </section>
 </main>
 
-<footer class="site-footer">
-  <div class="container">
-    <div class="footer-grid">
-      <div class="footer-brand">
-        <a href="index.html" class="brand">
-          <img src="../assets/img/logo.png" alt="شعار شبكات الأسطورة" width="42" height="42" />
-          <span class="brand-name">شبكات الأسطورة<span>حلول شبكات وبرمجيات</span></span>
-        </a>
-        <p>معززات اتصال 5G، أنظمة استقبال فضائي مركزية للمباني، وتطوير برمجيات مخصصة للشركات والمنشآت في المملكة العربية السعودية.</p>
-        <div class="social-row">
-          <a href="#" aria-label="X" class="todo" style="display:none">X</a>
-          <a href="#" aria-label="Instagram" class="todo" style="display:none">IG</a>
-          <a href="#" aria-label="LinkedIn" class="todo" style="display:none">in</a>
-        </div>
-      </div>
-      <div class="footer-col">
-        <h4>الشركة</h4>
-        <ul>
-          <li><a href="about.html">من نحن</a></li>
-          <li><a href="network.html">الشبكات</a></li>
-          <li><a href="software.html">تطوير البرمجيات</a></li>
-          <li><a href="security.html">الأمن والحماية</a></li>
-          <li><a href="contact.html">اتصل بنا</a></li>
-        </ul>
-      </div>
-      <div class="footer-col">
-        <h4>القانونية</h4>
-        <ul>
-          <li><a href="privacy.html">سياسة الخصوصية</a></li>
-          <li><a href="terms.html">الشروط والأحكام</a></li>
-        </ul>
-      </div>
-      <div class="footer-col">
-        <h4>تواصل معنا</h4>
-        <ul>
-          <li><a href="tel:+966583883398">0583883398</a></li>
-          <li><strong>المبيعات:</strong> <a href="mailto:sales@alasturah.com">sales@alasturah.com</a></li>
-          <li><strong>الدعم الفني:</strong> <a href="mailto:support@alasturah.com">support@alasturah.com</a></li>
-        </ul>
+<footer class="footer">
+  <div class="foot-grid">
+    <div class="foot-brand">
+      <a href="index.html" class="wordmark">
+        <img src="../assets/img/logo.png" alt="شعار شبكات الأسطورة" width="42" height="42" />
+        شبكات الأسطورة
+      </a>
+      <p>معززات اتصال 5G، أنظمة استقبال فضائي مركزية للمباني، وتطوير برمجيات مخصصة للشركات والمنشآت في المملكة العربية السعودية.</p>
+      <div class="social-row">
+        <a href="#" aria-label="X" class="todo" style="display:none">X</a>
+        <a href="#" aria-label="Instagram" class="todo" style="display:none">IG</a>
+        <a href="#" aria-label="LinkedIn" class="todo" style="display:none">in</a>
       </div>
     </div>
-    <div class="footer-legal">
-      <span>© <span data-year></span> مؤسسة شبكات الأسطورة المميزة. جميع الحقوق محفوظة.</span>
-      <span>سجل تجاري: 7053859943 · الرقم الضريبي: 312152074400003</span>
+    <div class="foot-col">
+      <h5>الشركة</h5>
+      <a class="first" href="about.html">من نحن</a>
+      <a href="network.html">الشبكات</a>
+      <a href="software.html">تطوير البرمجيات</a>
+      <a href="security.html">الأمن والحماية</a>
+      <a href="contact.html">اتصل بنا</a>
     </div>
+    <div class="foot-col">
+      <h5>القانونية</h5>
+      <a class="first" href="privacy.html">سياسة الخصوصية</a>
+      <a href="terms.html">الشروط والأحكام</a>
+    </div>
+    <div class="foot-col">
+      <h5>تواصل معنا</h5>
+      <a class="first" href="tel:+966583883398">0583883398</a>
+      <a href="mailto:sales@alasturah.com">المبيعات: sales@alasturah.com</a>
+      <a href="mailto:support@alasturah.com">الدعم الفني: support@alasturah.com</a>
+    </div>
+  </div>
+  <div class="foot-bottom">
+    <span>© <span data-year></span> مؤسسة شبكات الأسطورة المميزة. جميع الحقوق محفوظة.</span>
+    <span>سجل تجاري: 7053859943 · الرقم الضريبي: 312152074400003</span>
   </div>
 </footer>
 
