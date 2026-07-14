@@ -12,125 +12,168 @@
 <link rel="icon" href="../assets/img/favicon.svg" type="image/svg+xml" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet" />
-<link rel="stylesheet" href="../assets/css/styles.css" />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="../assets/css/design-system.css" />
+<style>
+  /* Page-specific: compact page hero, prose section, 5-step delivery row — not covered by design-system.css components */
+  .page-hero { background: linear-gradient(180deg, var(--hero-sky-from) 0%, var(--hero-sky-to) 100%); padding: 64px 32px; text-align: center; }
+  .page-hero-inner { max-width: 880px; margin-inline: auto; }
+  .page-hero p { font-size: 18px; color: var(--slate); max-width: 640px; margin: 16px auto 0; }
+
+  .prose { max-width: 720px; }
+  .prose h2 { margin-top: 0; }
+  .prose p { font-size: 18px; color: var(--steel); margin-top: 16px; }
+  .prose .check-list { margin-top: 24px; }
+  .prose .check-list strong { color: var(--ink); }
+
+  .card-base .icon-tile { margin-bottom: 16px; }
+  .card-base h3 { margin-top: 0; }
+  .card-base p { font-size: 14px; color: var(--steel); margin-top: 8px; }
+
+  .step-row { display: grid; grid-template-columns: repeat(5, 1fr); gap: 16px; margin-top: 48px; }
+  .step { background: var(--canvas); border: 1px solid var(--hairline); border-radius: var(--r-lg); padding: var(--sp-xl); }
+  .step h3 { margin-top: 12px; }
+  .step p { font-size: 14px; color: var(--steel); margin-top: 8px; }
+  @media (max-width: 1023px) {
+    .step-row { grid-template-columns: repeat(3, 1fr); }
+  }
+  @media (max-width: 767px) {
+    .step-row { grid-template-columns: 1fr 1fr; }
+  }
+  @media (max-width: 479px) {
+    .step-row { grid-template-columns: 1fr; }
+  }
+
+  .cta { text-align: center; padding: var(--sp-section-lg) 32px; }
+  .cta h2 { max-width: 680px; margin-inline: auto; }
+  .cta p { font-size: 18px; color: var(--steel); margin-top: 16px; }
+  .cta .row { display: flex; gap: 12px; justify-content: center; margin-top: 32px; }
+
+  .foot-brand p { font-size: 14px; color: var(--steel); margin-top: 12px; max-width: 320px; }
+  .foot-col .first { margin-top: 14px; }
+
+  .whatsapp-float { position: fixed; bottom: 26px; inset-inline-end: 26px; z-index: 200; background: #25D366; width: 58px; height: 58px; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 8px 24px rgba(0,0,0,.2); transition: transform .15s ease; }
+  .whatsapp-float:hover { transform: scale(1.08); }
+</style>
 </head>
 <body>
 
-<header class="site-header">
-  <div class="container nav">
-    <a href="index.html" class="brand">
-      <img src="../assets/img/logo.png" alt="Shabakat Alasturah logo" width="42" height="42" />
-      <span class="brand-name">Shabakat Alasturah<span>Network &amp; Software Solutions</span></span>
-    </a>
-    <nav class="nav-links" id="nav-links">
-      <a href="index.html">Home</a>
-      <a href="about.html">About</a>
-      <a href="network.html">Network</a>
-      <a href="software.html" class="active">Software Development</a>
-      <a href="security.html">Security</a>
-      <a href="contact.html">Contact</a>
-    </nav>
-    <div class="nav-actions">
-      <a class="lang-switch" href="../ar/software.html">العربية</a>
-      <a class="btn btn-cta" href="contact.html">Request a Quote</a>
+<nav class="nav">
+  <div class="nav-inner">
+    <div class="nav-left">
+      <a href="index.html" class="wordmark">
+        <img src="../assets/img/logo.png" alt="Shabakat Alasturah logo" width="42" height="42" />
+        Shabakat Alasturah
+      </a>
+      <div class="nav-links" id="nav-links">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="network.html">Network</a>
+        <a href="software.html" class="active">Software Development</a>
+        <a href="security.html">Security</a>
+        <a href="contact.html">Contact</a>
+      </div>
+    </div>
+    <div class="nav-right">
+      <a href="../ar/software.html" class="lang">العربية</a>
+      <a href="contact.html" class="btn btn-primary">Request a Quote</a>
       <button class="nav-toggle" aria-label="Open menu" aria-expanded="false">
-        <span></span><span></span><span></span>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
       </button>
     </div>
+  </div>
+</nav>
+
+<header class="page-hero">
+  <div class="page-hero-inner">
+    <h1 class="t-h1">Software Development</h1>
+    <p>We design and build systems and applications around how your business actually works — not generic off-the-shelf tools.</p>
   </div>
 </header>
 
 <main>
-  <section class="page-header">
+  <section class="band">
     <div class="container">
-      <h1>Software Development</h1>
-      <p>We design and build systems and applications around how your business actually works — not generic off-the-shelf tools.</p>
-    </div>
-  </section>
-
-  <section class="section">
-    <div class="container">
-      <div class="section-head center">
+      <div class="sec-head center">
         <span class="eyebrow">Our Services</span>
-        <h2>What We Build</h2>
+        <h2 class="t-h2">What We Build</h2>
       </div>
-      <div class="grid grid-3">
-        <div class="card">
-          <div class="card-icon">🌐</div>
-          <h3>Web Applications</h3>
+      <div class="grid-3">
+        <div class="card-base">
+          <div class="icon-tile"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M8 7l-5 5 5 5M16 7l5 5-5 5"/></svg></div>
+          <h3 class="t-h4">Web Applications</h3>
           <p>Platforms, dashboards, and web systems designed around your business needs.</p>
         </div>
-        <div class="card">
-          <div class="card-icon">📱</div>
-          <h3>Mobile Applications</h3>
+        <div class="card-base">
+          <div class="icon-tile"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="7" y="2" width="10" height="20" rx="2"/><path d="M11 18h2"/></svg></div>
+          <h3 class="t-h4">Mobile Applications</h3>
           <p>iOS and Android apps that serve your customers or your internal team.</p>
         </div>
-        <div class="card">
-          <div class="card-icon">⚙️</div>
-          <h3>Internal Process Automation</h3>
+        <div class="card-base">
+          <div class="icon-tile"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.7 1.7 0 0 0 .34 1.87l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.7 1.7 0 0 0-1.87-.34 1.7 1.7 0 0 0-1 1.55V21a2 2 0 0 1-4 0v-.09A1.7 1.7 0 0 0 9 19.4a1.7 1.7 0 0 0-1.87.34l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.7 1.7 0 0 0 .34-1.87 1.7 1.7 0 0 0-1.55-1H3a2 2 0 0 1 0-4h.09A1.7 1.7 0 0 0 4.6 9a1.7 1.7 0 0 0-.34-1.87l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.7 1.7 0 0 0 1.87.34H9a1.7 1.7 0 0 0 1-1.55V3a2 2 0 0 1 4 0v.09a1.7 1.7 0 0 0 1 1.55 1.7 1.7 0 0 0 1.87-.34l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.7 1.7 0 0 0-.34 1.87V9a1.7 1.7 0 0 0 1.55 1H21a2 2 0 0 1 0 4h-.09a1.7 1.7 0 0 0-1.55 1z"/></svg></div>
+          <h3 class="t-h4">Internal Process Automation</h3>
           <p>Systems that handle repetitive tasks and reduce reliance on manual spreadsheets and files.</p>
         </div>
-        <div class="card">
-          <div class="card-icon">🔗</div>
-          <h3>System Integration</h3>
+        <div class="card-base">
+          <div class="icon-tile"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 17H7a5 5 0 0 1 0-10h2M15 7h2a5 5 0 0 1 0 10h-2M8 12h8"/></svg></div>
+          <h3 class="t-h4">System Integration</h3>
           <p>Connecting your existing systems (such as accounting or CRM) with each other and with new tools.</p>
         </div>
-        <div class="card">
-          <div class="card-icon">🛠️</div>
-          <h3>Maintenance & Support</h3>
+        <div class="card-base">
+          <div class="icon-tile"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a4 4 0 0 0-5.66 5.66L3 18l3 3 6.04-6.04a4 4 0 0 0 5.66-5.66l-2.12 2.12-2.83-2.83 2.12-2.12z"/></svg></div>
+          <h3 class="t-h4">Maintenance &amp; Support</h3>
           <p>Ongoing follow-up after launch, updates, and fixing issues as they come up.</p>
         </div>
-        <div class="card">
-          <div class="card-icon">📊</div>
-          <h3>Dashboards & Reporting</h3>
+        <div class="card-base">
+          <div class="icon-tile"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><rect x="7" y="13" width="3" height="5"/><rect x="12" y="9" width="3" height="9"/><rect x="17" y="5" width="3" height="13"/></svg></div>
+          <h3 class="t-h4">Dashboards &amp; Reporting</h3>
           <p>Clear visibility into your operational data to support decision-making.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <section class="section section--alt">
+  <section class="band band-surface">
     <div class="container">
-      <div class="section-head center">
+      <div class="sec-head center">
         <span class="eyebrow">How We Work</span>
-        <h2>How We Deliver Your Project</h2>
+        <h2 class="t-h2">How We Deliver Your Project</h2>
       </div>
-      <div class="steps">
+      <div class="step-row">
         <div class="step">
-          <div class="step-num">1</div>
-          <h3>Discovery</h3>
-          <p class="muted">Understanding your actual needs and project goals.</p>
+          <span class="t-micro-up">Step 1</span>
+          <h3 class="t-h5">Discovery</h3>
+          <p>Understanding your actual needs and project goals.</p>
         </div>
         <div class="step">
-          <div class="step-num">2</div>
-          <h3>Design</h3>
-          <p class="muted">Designing the user experience and system structure.</p>
+          <span class="t-micro-up">Step 2</span>
+          <h3 class="t-h5">Design</h3>
+          <p>Designing the user experience and system structure.</p>
         </div>
         <div class="step">
-          <div class="step-num">3</div>
-          <h3>Development</h3>
-          <p class="muted">Building the system with regular updates to you.</p>
+          <span class="t-micro-up">Step 3</span>
+          <h3 class="t-h5">Development</h3>
+          <p>Building the system with regular updates to you.</p>
         </div>
         <div class="step">
-          <div class="step-num">4</div>
-          <h3>Launch</h3>
-          <p class="muted">Thorough testing, then handover and delivery.</p>
+          <span class="t-micro-up">Step 4</span>
+          <h3 class="t-h5">Launch</h3>
+          <p>Thorough testing, then handover and delivery.</p>
         </div>
         <div class="step">
-          <div class="step-num">5</div>
-          <h3>Ongoing Support</h3>
-          <p class="muted">Continued maintenance and improvements after delivery.</p>
+          <span class="t-micro-up">Step 5</span>
+          <h3 class="t-h5">Ongoing Support</h3>
+          <p>Continued maintenance and improvements after delivery.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <section class="section">
+  <section class="band">
     <div class="container prose">
-      <h2>API & Webhook Integration</h2>
+      <h2 class="t-h2">API &amp; Webhook Integration</h2>
       <p>Merging security and other systems with your data network means one connected ecosystem instead of isolated tools. We build integrations on open APIs and webhooks so your systems share data in real time.</p>
-      <ul>
+      <ul class="check-list">
         <li><strong>Centralized Management:</strong> One dashboard pulling data from your different systems, instead of switching between separate panels.</li>
         <li><strong>Real-Time Sync:</strong> Webhook events notify your systems the moment something changes, without resource-heavy polling.</li>
         <li><strong>Frictionless Integration:</strong> Connecting your existing systems (accounting, CRM, security) to each other through documented, secure interfaces.</li>
@@ -138,66 +181,52 @@
     </div>
   </section>
 
-  <section class="section section--tight">
-    <div class="container">
-      <div class="cta-banner">
-        <div>
-          <h2>Have a software project in mind?</h2>
-          <p>Tell us what you need and we'll respond with practical next steps.</p>
-        </div>
-        <div class="hero-actions">
-          <a href="contact.html?interest=software" class="btn btn-cta">Discuss Your Project</a>
-        </div>
-      </div>
+  <section class="cta">
+    <h2 class="t-h2">Have a software project in mind?</h2>
+    <p>Tell us what you need and we'll respond with practical next steps.</p>
+    <div class="row">
+      <a href="contact.html?interest=software" class="btn btn-primary">Discuss Your Project</a>
     </div>
   </section>
 </main>
 
-<footer class="site-footer">
-  <div class="container">
-    <div class="footer-grid">
-      <div class="footer-brand">
-        <a href="index.html" class="brand">
-          <img src="../assets/img/logo.png" alt="Shabakat Alasturah logo" width="42" height="42" />
-          <span class="brand-name">Shabakat Alasturah<span>Network &amp; Software Solutions</span></span>
-        </a>
-        <p>5G boosters, centralized satellite systems for buildings, and custom software development for businesses and properties in Saudi Arabia.</p>
-        <div class="social-row">
-          <a href="#" aria-label="X" class="todo" style="display:none">X</a>
-          <a href="#" aria-label="Instagram" class="todo" style="display:none">IG</a>
-          <a href="#" aria-label="LinkedIn" class="todo" style="display:none">in</a>
-        </div>
-      </div>
-      <div class="footer-col">
-        <h4>Company</h4>
-        <ul>
-          <li><a href="about.html">About</a></li>
-          <li><a href="network.html">Network</a></li>
-          <li><a href="software.html">Software Development</a></li>
-          <li><a href="security.html">Security</a></li>
-          <li><a href="contact.html">Contact</a></li>
-        </ul>
-      </div>
-      <div class="footer-col">
-        <h4>Legal</h4>
-        <ul>
-          <li><a href="privacy.html">Privacy Policy</a></li>
-          <li><a href="terms.html">Terms & Conditions</a></li>
-        </ul>
-      </div>
-      <div class="footer-col">
-        <h4>Contact</h4>
-        <ul>
-          <li><a href="tel:+966583883398">+966 58 388 3398</a></li>
-          <li><strong>Sales:</strong> <a href="mailto:sales@alasturah.com">sales@alasturah.com</a></li>
-          <li><strong>Support:</strong> <a href="mailto:support@alasturah.com">support@alasturah.com</a></li>
-        </ul>
+<footer class="footer">
+  <div class="foot-grid">
+    <div class="foot-brand">
+      <a href="index.html" class="wordmark">
+        <img src="../assets/img/logo.png" alt="Shabakat Alasturah logo" width="42" height="42" />
+        Shabakat Alasturah
+      </a>
+      <p>5G boosters, centralized satellite systems for buildings, and custom software development for businesses and properties in Saudi Arabia.</p>
+      <div class="social-row">
+        <a href="#" aria-label="X" class="todo" style="display:none">X</a>
+        <a href="#" aria-label="Instagram" class="todo" style="display:none">IG</a>
+        <a href="#" aria-label="LinkedIn" class="todo" style="display:none">in</a>
       </div>
     </div>
-    <div class="footer-legal">
-      <span>© <span data-year></span> Shabakat Alasturah Almumayizah Est. All rights reserved.</span>
-      <span>CR No.: 7053859943 · VAT No.: 312152074400003</span>
+    <div class="foot-col">
+      <h5>Company</h5>
+      <a class="first" href="about.html">About</a>
+      <a href="network.html">Network</a>
+      <a href="software.html">Software Development</a>
+      <a href="security.html">Security</a>
+      <a href="contact.html">Contact</a>
     </div>
+    <div class="foot-col">
+      <h5>Legal</h5>
+      <a class="first" href="privacy.html">Privacy Policy</a>
+      <a href="terms.html">Terms &amp; Conditions</a>
+    </div>
+    <div class="foot-col">
+      <h5>Contact</h5>
+      <a class="first" href="tel:+966583883398">+966 58 388 3398</a>
+      <a href="mailto:sales@alasturah.com">Sales: sales@alasturah.com</a>
+      <a href="mailto:support@alasturah.com">Support: support@alasturah.com</a>
+    </div>
+  </div>
+  <div class="foot-bottom">
+    <span>© <span data-year></span> Shabakat Alasturah Almumayizah Est. All rights reserved.</span>
+    <span>CR No.: 7053859943 · VAT No.: 312152074400003</span>
   </div>
 </footer>
 
