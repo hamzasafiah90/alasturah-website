@@ -12,228 +12,260 @@
 <link rel="icon" href="../assets/img/favicon.svg" type="image/svg+xml" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet" />
-<link rel="stylesheet" href="../assets/css/styles.css" />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="../assets/css/design-system.css" />
+<style>
+  /* Page-specific: compact page hero, prose sections, metric grid, notice box — not covered by design-system.css components */
+  .page-hero { background: linear-gradient(180deg, var(--hero-sky-from) 0%, var(--hero-sky-to) 100%); padding: 64px 32px; text-align: center; }
+  .page-hero-inner { max-width: 880px; margin-inline: auto; }
+  .page-hero p { font-size: 18px; color: var(--slate); max-width: 640px; margin: 16px auto 0; }
+
+  .prose { max-width: 720px; }
+  .prose h2 { margin-top: 12px; }
+  .prose .lead { font-size: 18px; color: var(--steel); margin-top: 16px; }
+  .prose ul { display: flex; flex-direction: column; gap: 10px; margin: 20px 0; list-style: none; }
+  .prose li { font-size: 15px; color: var(--slate); }
+  .prose .btn { margin-top: 8px; }
+
+  .grid-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; margin-top: 48px; }
+  @media (max-width: 767px) {
+    .grid-2 { grid-template-columns: 1fr; }
+  }
+
+  .card-base .icon-tile { margin-bottom: 16px; font-size: 20px; }
+  .card-base h3 { margin-top: 0; }
+  .card-base p { font-size: 14px; color: var(--steel); margin-top: 8px; }
+
+  .metric-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-top: 32px; }
+  .metric { border: 1px solid var(--hairline); border-radius: var(--r-lg); padding: 20px; text-align: center; }
+  .metric .n { font-size: 28px; font-weight: 600; color: var(--ink); }
+  .metric .l { font-size: 13px; color: var(--steel); margin-top: 4px; }
+  @media (max-width: 767px) {
+    .metric-grid { grid-template-columns: 1fr 1fr; }
+  }
+  .metric-note { text-align: center; margin-top: 16px; font-size: 14px; color: var(--steel); }
+
+  .notice { background: rgba(195,125,13,.08); border: 1px solid var(--warn); border-radius: var(--r-md); padding: 20px 24px; font-size: 14px; color: var(--charcoal); }
+
+  .cta { text-align: center; padding: var(--sp-section-lg) 32px; }
+  .cta h2 { max-width: 680px; margin-inline: auto; }
+  .cta p { font-size: 18px; color: var(--steel); margin-top: 16px; }
+  .cta .row { display: flex; gap: 12px; justify-content: center; margin-top: 32px; }
+
+  .foot-brand p { font-size: 14px; color: var(--steel); margin-top: 12px; max-width: 320px; }
+  .foot-col .first { margin-top: 14px; }
+
+  .whatsapp-float { position: fixed; bottom: 26px; inset-inline-end: 26px; z-index: 200; background: #25D366; width: 58px; height: 58px; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 8px 24px rgba(0,0,0,.2); transition: transform .15s ease; }
+  .whatsapp-float:hover { transform: scale(1.08); }
+</style>
 </head>
 <body>
 
-<header class="site-header">
-  <div class="container nav">
-    <a href="index.html" class="brand">
-      <img src="../assets/img/logo.png" alt="Shabakat Alasturah logo" width="42" height="42" />
-      <span class="brand-name">Shabakat Alasturah<span>Network &amp; Software Solutions</span></span>
-    </a>
-    <nav class="nav-links" id="nav-links">
-      <a href="index.html">Home</a>
-      <a href="about.html">About</a>
-      <a href="network.html" class="active">Network</a>
-      <a href="software.html">Software Development</a>
-      <a href="security.html">Security</a>
-      <a href="contact.html">Contact</a>
-    </nav>
-    <div class="nav-actions">
-      <a class="lang-switch" href="../ar/network.html">العربية</a>
-      <a class="btn btn-cta" href="contact.html">Request a Quote</a>
+<nav class="nav">
+  <div class="nav-inner">
+    <div class="nav-left">
+      <a href="index.html" class="wordmark">
+        <img src="../assets/img/logo.png" alt="Shabakat Alasturah logo" width="42" height="42" />
+        Shabakat Alasturah
+      </a>
+      <div class="nav-links" id="nav-links">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="network.html" class="active">Network</a>
+        <a href="software.html">Software Development</a>
+        <a href="security.html">Security</a>
+        <a href="contact.html">Contact</a>
+      </div>
+    </div>
+    <div class="nav-right">
+      <a href="../ar/network.html" class="lang">العربية</a>
+      <a href="contact.html" class="btn btn-primary">Request a Quote</a>
       <button class="nav-toggle" aria-label="Open menu" aria-expanded="false">
-        <span></span><span></span><span></span>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
       </button>
     </div>
+  </div>
+</nav>
+
+<header class="page-hero">
+  <div class="page-hero-inner">
+    <h1 class="t-h1">Network &amp; Connectivity Products</h1>
+    <p>Regulator-approved connectivity solutions designed for complete building coverage.</p>
   </div>
 </header>
 
 <main>
-  <section class="page-header">
-    <div class="container">
-      <h1>Network & Connectivity Products</h1>
-      <p>Regulator-approved connectivity solutions designed for complete building coverage.</p>
-    </div>
-  </section>
-
-  <section class="section" id="internet-booster">
+  <section class="band" id="internet-booster">
     <div class="container prose">
       <span class="eyebrow">📶 Internet</span>
-      <h2>5G Internet Booster</h2>
+      <h2 class="t-h2">5G Internet Booster</h2>
       <p class="lead">Captures mobile signal from outside and redistributes it more strongly inside the building, improving mobile internet speed and stability where coverage is weak.</p>
-      <ul style="display:flex;flex-direction:column;gap:10px;margin:20px 0;">
+      <ul>
         <li>✔️ Suited for homes, offices, and shops with weak indoor coverage</li>
         <li>✔️ Improves browsing speed and app performance indoors</li>
         <li>✔️ Installed by our engineering team after a site assessment</li>
       </ul>
-      <a href="contact.html?interest=internet-booster" class="btn btn-cta">Request a Quote for This Product</a>
+      <a href="contact.html?interest=internet-booster" class="btn btn-primary">Request a Quote for This Product</a>
     </div>
   </section>
 
-  <section class="section section--alt" id="call-booster">
+  <section class="band band-surface" id="call-booster">
     <div class="container prose">
       <span class="eyebrow">📞 Calls</span>
-      <h2>5G Call Booster</h2>
+      <h2 class="t-h2">5G Call Booster</h2>
       <p class="lead">Improves call quality and reduces dropped calls inside buildings with thick walls, basements, or parking levels where mobile signal weakens significantly.</p>
-      <ul style="display:flex;flex-direction:column;gap:10px;margin:20px 0;">
+      <ul>
         <li>✔️ Suited for offices, warehouses, and multi-floor buildings</li>
         <li>✔️ Reduces dropped calls and poor reception</li>
-        <li>✔️ Equipment approved by the Communications, Space & Technology Commission (CST)</li>
+        <li>✔️ Equipment approved by the Communications, Space &amp; Technology Commission (CST)</li>
       </ul>
-      <a href="contact.html?interest=call-booster" class="btn btn-cta">Request a Quote for This Product</a>
+      <a href="contact.html?interest=call-booster" class="btn btn-primary">Request a Quote for This Product</a>
     </div>
   </section>
 
-  <section class="section" id="satellite">
+  <section class="band" id="satellite">
     <div class="container prose">
       <span class="eyebrow">📡 Satellite</span>
-      <h2>Centralized Satellite System for Buildings</h2>
+      <h2 class="t-h2">Centralized Satellite System for Buildings</h2>
       <p class="lead">A single centralized satellite dish distributes broadcast signal to every unit in the building through an internal network, instead of scattered individual dishes on the facade.</p>
-      <ul style="display:flex;flex-direction:column;gap:10px;margin:20px 0;">
+      <ul>
         <li>✔️ Cleaner building facades and rooftops for towers and complexes</li>
         <li>✔️ Lower cost and maintenance compared to multiple individual dishes</li>
         <li>✔️ Suited for residential compounds, towers, and commercial complexes</li>
       </ul>
-      <a href="contact.html?interest=satellite" class="btn btn-cta">Request a Quote for This Product</a>
+      <a href="contact.html?interest=satellite" class="btn btn-primary">Request a Quote for This Product</a>
     </div>
   </section>
 
-  <section class="section" id="data-network">
+  <section class="band" id="data-network">
     <div class="container">
-      <div class="section-head center">
+      <div class="sec-head center">
         <span class="eyebrow">Enterprise Solutions</span>
-        <h2>Data Network Solutions</h2>
-        <p class="lead">The digital foundation for connectivity and scale.</p>
+        <h2 class="t-h2">Data Network Solutions</h2>
+        <p>The digital foundation for connectivity and scale.</p>
       </div>
-      <div class="grid grid-2">
-        <div class="card">
-          <div class="card-icon">🏢</div>
-          <h3>Enterprise LAN/WAN</h3>
+      <div class="grid-2">
+        <div class="card-base">
+          <div class="icon-tile">🏢</div>
+          <h3 class="t-h4">Enterprise LAN/WAN</h3>
           <p>High-speed cabling and routing infrastructure designed for 99.99% uptime and seamless branch connectivity.</p>
         </div>
-        <div class="card">
-          <div class="card-icon">📶</div>
-          <h3>Next-Gen Wireless</h3>
+        <div class="card-base">
+          <div class="icon-tile">📶</div>
+          <h3 class="t-h4">Next-Gen Wireless</h3>
           <p>Wi-Fi 6E/7 deployments providing high-density coverage for mobile workforces and IoT device management.</p>
         </div>
-        <div class="card">
-          <div class="card-icon">☁️</div>
-          <h3>SD-WAN Integration</h3>
+        <div class="card-base">
+          <div class="icon-tile">☁️</div>
+          <h3 class="t-h4">SD-WAN Integration</h3>
           <p>Intelligent traffic steering that optimizes cloud application performance while reducing operational costs.</p>
         </div>
-        <div class="card">
-          <div class="card-icon">🖥️</div>
-          <h3>Data Centers</h3>
+        <div class="card-base">
+          <div class="icon-tile">🖥️</div>
+          <h3 class="t-h4">Data Centers</h3>
           <p>Rack infrastructure, colocation-ready environments, and server rooms designed for uptime and scale.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <section class="section section--alt" id="infrastructure">
+  <section class="band band-surface" id="infrastructure">
     <div class="container">
-      <div class="section-head center">
+      <div class="sec-head center">
         <span class="eyebrow">Built for Performance</span>
-        <h2>Infrastructure Excellence</h2>
+        <h2 class="t-h2">Infrastructure Excellence</h2>
       </div>
-      <div class="grid grid-3">
-        <div class="card">
-          <div class="card-icon">🔗</div>
-          <h3>Fiber Optic Backbones</h3>
+      <div class="grid-3">
+        <div class="card-base">
+          <div class="icon-tile">🔗</div>
+          <h3 class="t-h4">Fiber Optic Backbones</h3>
           <p>Future-proofing buildings with ultra-high bandwidth capacity.</p>
         </div>
-        <div class="card">
-          <div class="card-icon">🔍</div>
-          <h3>Network Audits</h3>
+        <div class="card-base">
+          <div class="icon-tile">🔍</div>
+          <h3 class="t-h4">Network Audits</h3>
           <p>Real-time assessment of existing infrastructure to identify and fix bottlenecks.</p>
         </div>
-        <div class="card">
-          <div class="card-icon">🛠️</div>
-          <h3>Managed IT Services</h3>
+        <div class="card-base">
+          <div class="icon-tile">🛠️</div>
+          <h3 class="t-h4">Managed IT Services</h3>
           <p>24/7 monitoring and maintenance of your active network components.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <section class="section">
+  <section class="band">
     <div class="container">
-      <div class="section-head center">
+      <div class="sec-head center">
         <span class="eyebrow">Why It Matters</span>
-        <h2>Surging Data Demand</h2>
-        <p class="lead">Projected daily throughput for converged high-definition surveillance networks.</p>
+        <h2 class="t-h2">Surging Data Demand</h2>
+        <p>Projected daily throughput for converged high-definition surveillance networks.</p>
       </div>
-      <div class="stats">
-        <div class="stat-card"><strong>12 TB</strong><span>2022</span></div>
-        <div class="stat-card"><strong>22 TB</strong><span>2023</span></div>
-        <div class="stat-card"><strong>38 TB</strong><span>2024</span></div>
-        <div class="stat-card"><strong>55 TB</strong><span>2025 (Projected)</span></div>
+      <div class="metric-grid">
+        <div class="metric"><div class="n">12 TB</div><div class="l">2022</div></div>
+        <div class="metric"><div class="n">22 TB</div><div class="l">2023</div></div>
+        <div class="metric"><div class="n">38 TB</div><div class="l">2024</div></div>
+        <div class="metric"><div class="n">55 TB</div><div class="l">2025 (Projected)</div></div>
       </div>
-      <p class="muted" style="text-align:center;margin-top:16px;">Robust fiber infrastructure investment is essential, not optional, to keep pace with this growth.</p>
+      <p class="metric-note">Robust fiber infrastructure investment is essential, not optional, to keep pace with this growth.</p>
     </div>
   </section>
 
-  <section class="section section--tight section--alt">
+  <section class="band band-surface">
     <div class="container">
-      <div class="disclaimer-box">
-        Note: all signal boosters we supply are approved by the Communications, Space & Technology Commission (CST) in Saudi Arabia. Using unlicensed boosters violates the Telecommunications Act.
+      <div class="notice">
+        Note: all signal boosters we supply are approved by the Communications, Space &amp; Technology Commission (CST) in Saudi Arabia. Using unlicensed boosters violates the Telecommunications Act.
       </div>
     </div>
   </section>
 
-  <section class="section section--tight">
-    <div class="container">
-      <div class="cta-banner">
-        <div>
-          <h2>Not sure which solution fits your building?</h2>
-          <p>Reach out and we'll assess your needs before recommending anything.</p>
-        </div>
-        <div class="hero-actions">
-          <a href="contact.html" class="btn btn-cta">Request a Free Assessment</a>
-        </div>
-      </div>
+  <section class="cta">
+    <h2 class="t-h2">Not sure which solution fits your building?</h2>
+    <p>Reach out and we'll assess your needs before recommending anything.</p>
+    <div class="row">
+      <a href="contact.html" class="btn btn-primary">Request a Free Assessment</a>
     </div>
   </section>
 </main>
 
-<footer class="site-footer">
-  <div class="container">
-    <div class="footer-grid">
-      <div class="footer-brand">
-        <a href="index.html" class="brand">
-          <img src="../assets/img/logo.png" alt="Shabakat Alasturah logo" width="42" height="42" />
-          <span class="brand-name">Shabakat Alasturah<span>Network &amp; Software Solutions</span></span>
-        </a>
-        <p>5G boosters, centralized satellite systems for buildings, and custom software development for businesses and properties in Saudi Arabia.</p>
-        <div class="social-row">
-          <a href="#" aria-label="X" class="todo" style="display:none">X</a>
-          <a href="#" aria-label="Instagram" class="todo" style="display:none">IG</a>
-          <a href="#" aria-label="LinkedIn" class="todo" style="display:none">in</a>
-        </div>
-      </div>
-      <div class="footer-col">
-        <h4>Company</h4>
-        <ul>
-          <li><a href="about.html">About</a></li>
-          <li><a href="network.html">Network</a></li>
-          <li><a href="software.html">Software Development</a></li>
-          <li><a href="security.html">Security</a></li>
-          <li><a href="contact.html">Contact</a></li>
-        </ul>
-      </div>
-      <div class="footer-col">
-        <h4>Legal</h4>
-        <ul>
-          <li><a href="privacy.html">Privacy Policy</a></li>
-          <li><a href="terms.html">Terms & Conditions</a></li>
-        </ul>
-      </div>
-      <div class="footer-col">
-        <h4>Contact</h4>
-        <ul>
-          <li><a href="tel:+966583883398">+966 58 388 3398</a></li>
-          <li><strong>Sales:</strong> <a href="mailto:sales@alasturah.com">sales@alasturah.com</a></li>
-          <li><strong>Support:</strong> <a href="mailto:support@alasturah.com">support@alasturah.com</a></li>
-        </ul>
+<footer class="footer">
+  <div class="foot-grid">
+    <div class="foot-brand">
+      <a href="index.html" class="wordmark">
+        <img src="../assets/img/logo.png" alt="Shabakat Alasturah logo" width="42" height="42" />
+        Shabakat Alasturah
+      </a>
+      <p>5G boosters, centralized satellite systems for buildings, and custom software development for businesses and properties in Saudi Arabia.</p>
+      <div class="social-row">
+        <a href="#" aria-label="X" class="todo" style="display:none">X</a>
+        <a href="#" aria-label="Instagram" class="todo" style="display:none">IG</a>
+        <a href="#" aria-label="LinkedIn" class="todo" style="display:none">in</a>
       </div>
     </div>
-    <div class="footer-legal">
-      <span>© <span data-year></span> Shabakat Alasturah Almumayizah Est. All rights reserved.</span>
-      <span>CR No.: 7053859943 · VAT No.: 312152074400003</span>
+    <div class="foot-col">
+      <h5>Company</h5>
+      <a class="first" href="about.html">About</a>
+      <a href="network.html">Network</a>
+      <a href="software.html">Software Development</a>
+      <a href="security.html">Security</a>
+      <a href="contact.html">Contact</a>
     </div>
+    <div class="foot-col">
+      <h5>Legal</h5>
+      <a class="first" href="privacy.html">Privacy Policy</a>
+      <a href="terms.html">Terms &amp; Conditions</a>
+    </div>
+    <div class="foot-col">
+      <h5>Contact</h5>
+      <a class="first" href="tel:+966583883398">+966 58 388 3398</a>
+      <a href="mailto:sales@alasturah.com">Sales: sales@alasturah.com</a>
+      <a href="mailto:support@alasturah.com">Support: support@alasturah.com</a>
+    </div>
+  </div>
+  <div class="foot-bottom">
+    <span>© <span data-year></span> Shabakat Alasturah Almumayizah Est. All rights reserved.</span>
+    <span>CR No.: 7053859943 · VAT No.: 312152074400003</span>
   </div>
 </footer>
 
