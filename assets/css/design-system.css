@@ -214,6 +214,9 @@ textarea.text-input { height: auto; min-height: 120px; }
 .foot-col a:hover { color: var(--ink); }
 .foot-bottom { max-width: 1280px; margin: var(--sp-section-sm) auto 0; padding-top: var(--sp-xl); border-top: 1px solid var(--hairline-soft); display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px; font-size: 13px; color: var(--stone); }
 
+/* grid helper */
+.grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+
 /* ---------- 11. RESPONSIVE ---------- */
 @media (max-width: 1023px) {
   .nav-toggle { display: inline-flex; width: 40px; height: 40px; border-radius: var(--r-full); background: var(--canvas); border: 1px solid var(--hairline); cursor: pointer; align-items: center; justify-content: center; padding: 0; }
@@ -247,6 +250,3 @@ textarea.text-input { height: auto; min-height: 120px; }
 @media (prefers-reduced-motion: reduce) {
   * { transition: none !important; scroll-behavior: auto !important; }
 }
-
-/* grid helper */
-.grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
