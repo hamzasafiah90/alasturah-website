@@ -175,6 +175,11 @@ html[lang="ar"] .hero h1 { font-size: 64px; line-height: 1.15; }
 .card-feature:hover .arr { transform: translateX(3px); }
 html[dir="rtl"] .card-feature:hover .arr { transform: translateX(-3px); }
 
+/* check list — green check bullets */
+.check-list { list-style: none; display: flex; flex-direction: column; gap: var(--sp-xs); }
+.check-list li { display: flex; align-items: flex-start; gap: 10px; font-size: 14px; color: var(--steel); }
+.check-list li::before { content: ""; flex: none; width: 18px; height: 18px; margin-top: 1px; border-radius: var(--r-full); background: var(--brand-green) url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="%230a0a0a" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 13l4 4 10-10"/></svg>') center/11px no-repeat; }
+
 /* ---------- 8. BANDS / SECTIONS ---------- */
 .band { padding: var(--sp-section-lg) 0; }
 .band-surface { background: var(--surface-soft); border-top: 1px solid var(--hairline-soft); border-bottom: 1px solid var(--hairline-soft); }
