@@ -223,6 +223,35 @@ textarea.text-input { height: auto; min-height: 120px; }
 .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
 .grid-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; margin-top: 48px; }
 
+/* ---------- 12. PAGE COMPONENTS ---------- */
+.page-hero { background: linear-gradient(180deg, var(--hero-sky-from) 0%, var(--hero-sky-to) 100%); padding: 64px 32px; text-align: center; }
+.page-hero-inner { max-width: 880px; margin-inline: auto; }
+.page-hero p { font-size: 18px; color: var(--slate); max-width: 640px; margin: 16px auto 0; }
+
+.prose { max-width: 720px; }
+.prose .icon-tile { margin-bottom: 20px; }
+.prose h2 { margin-top: 0; }
+.prose .icon-tile ~ h2 { margin-top: 12px; }
+.prose p, .prose .lead { font-size: 18px; color: var(--steel); margin-top: 16px; }
+.prose .check-list { margin-top: 24px; margin-bottom: 20px; }
+.prose .check-list strong { color: var(--ink); }
+.prose .btn { margin-top: 8px; }
+
+.card-base .icon-tile { margin-bottom: 16px; }
+.card-base h3 { margin-top: 0; }
+.card-base p { font-size: 14px; color: var(--steel); margin-top: 8px; }
+
+.cta { text-align: center; padding: var(--sp-section-lg) 32px; }
+.cta h2 { max-width: 680px; margin-inline: auto; }
+.cta p { font-size: 18px; color: var(--steel); margin-top: 16px; }
+.cta .row { display: flex; gap: 12px; justify-content: center; margin-top: 32px; }
+
+.foot-brand p { font-size: 14px; color: var(--steel); margin-top: 12px; max-width: 320px; }
+.foot-col .first { margin-top: 14px; }
+
+.whatsapp-float { position: fixed; bottom: 26px; inset-inline-end: 26px; z-index: 200; background: #25D366; width: 58px; height: 58px; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 8px 24px rgba(0,0,0,.2); transition: transform .15s ease; }
+.whatsapp-float:hover { transform: scale(1.08); }
+
 /* ---------- 11. RESPONSIVE ---------- */
 @media (max-width: 1023px) {
   .nav-toggle { display: inline-flex; width: 40px; height: 40px; border-radius: var(--r-full); background: var(--canvas); border: 1px solid var(--hairline); cursor: pointer; align-items: center; justify-content: center; padding: 0; }
@@ -253,6 +282,7 @@ textarea.text-input { height: auto; min-height: 120px; }
   .foot-grid { grid-template-columns: 1fr; }
   .nav-toggle { width: 44px; height: 44px; }
   .nav-right .btn-primary { display: none; }
+  .cta .row { flex-direction: column; align-items: center; }
 }
 @media (prefers-reduced-motion: reduce) {
   * { transition: none !important; scroll-behavior: auto !important; }
