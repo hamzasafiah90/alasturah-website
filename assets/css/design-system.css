@@ -105,6 +105,11 @@ html[lang="ar"] .t-micro-up { letter-spacing: 0; text-transform: none; font-size
 .eyebrow { font-size: 11px; font-weight: 600; letter-spacing: .5px; text-transform: uppercase; color: var(--brand-green-deep); }
 html[lang="ar"] .eyebrow { letter-spacing: 0; text-transform: none; font-size: 13px; }
 
+.sec-head { max-width: 720px; }
+.sec-head.center { margin-inline: auto; text-align: center; }
+.sec-head h2 { margin-top: 12px; }
+.sec-head p { font-size: 18px; color: var(--steel); margin-top: 16px; }
+
 /* ---------- 4. BUTTONS (all pills) ---------- */
 .btn {
   display: inline-flex; align-items: center; gap: 8px;
