@@ -78,6 +78,27 @@ Per page:
 5. Contact form: confirm form action/access key unchanged (diff against main).
 6. Lighthouse quick pass: no CLS from font loading (font-display: swap is in the Google Fonts URL).
 
+## Sign-off tracker (manual review, page by page)
+
+Mark each page reviewed and approved before merging `redesign/mintlify` to `main`:
+
+- [ ] en/index.html
+- [ ] ar/index.html
+- [ ] en/network.html
+- [ ] ar/network.html
+- [ ] en/security.html
+- [ ] ar/security.html
+- [ ] en/software.html
+- [ ] ar/software.html
+- [ ] en/about.html
+- [ ] ar/about.html
+- [ ] en/contact.html — confirm Web3Forms action/access key unchanged
+- [ ] ar/contact.html — confirm Web3Forms action/access key unchanged
+- [ ] en/privacy.html
+- [ ] ar/privacy.html
+- [ ] en/terms.html
+- [ ] ar/terms.html
+
 ## Out of scope — do not touch
 - Any copy rewrites (hero H1 / footer tagline / CTA heading rework is a separate track)
 - GA4 / Search Console

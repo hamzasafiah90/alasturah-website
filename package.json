@@ -2,9 +2,15 @@
   "name": "alasturah-website",
   "private": true,
   "scripts": {
-    "dev": "wrangler dev --persist-to ../.alasturah-wrangler-state"
+    "dev": "wrangler dev --persist-to ../.alasturah-wrangler-state",
+    "lint:html": "html-validate ar/**/*.html en/**/*.html index.html",
+    "lint:css": "stylelint assets/css/**/*.css",
+    "lint": "npm run lint:html && npm run lint:css"
   },
   "devDependencies": {
+    "html-validate": "^11.5.6",
+    "stylelint": "^17.14.0",
+    "stylelint-config-standard": "^40.0.0",
     "wrangler": "^4.110.0"
   }
 }
