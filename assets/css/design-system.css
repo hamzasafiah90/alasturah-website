@@ -13,7 +13,7 @@
 :root {
   /* color */
   --primary: #0a0a0a;
-  --on-primary: #ffffff;
+  --on-primary: #fff;
   --brand-green: #00d4a4;
   --brand-green-deep: #00b48a;
   --brand-green-soft: #7cebcb;
@@ -21,7 +21,7 @@
   --hero-sky-to: #f5e9d8;
   --hero-dark-from: #1a3d4a;
   --hero-dark-to: #2d5a4f;
-  --canvas: #ffffff;
+  --canvas: #fff;
   --canvas-dark: #0a0a0a;
   --surface: #f7f7f7;
   --surface-soft: #fafafa;
@@ -33,9 +33,9 @@
   --charcoal: #1c1c1e;
   --slate: #3a3a3c;
   --steel: #5a5a5c;
-  --stone: #888888;
+  --stone: #888;
   --muted: #a8a8aa;
-  --on-dark: #ffffff;
+  --on-dark: #fff;
   --on-dark-muted: #b3b3b3;
   --annotate: #1ba673;
   --tag: #3772cf;
@@ -73,6 +73,7 @@ html[lang="ar"] {
 /* ---------- 2. BASE ---------- */
 * { margin: 0; padding: 0; box-sizing: border-box; }
 html { scroll-behavior: smooth; }
+
 body {
   font-family: var(--font-ui);
   color: var(--ink);
@@ -189,10 +190,12 @@ html[dir="rtl"] .card-feature:hover .arr { transform: translateX(-3px); }
 /* ---------- 8. BANDS / SECTIONS ---------- */
 .band { padding: var(--sp-section-lg) 0; }
 .band-surface { background: var(--surface-soft); border-top: 1px solid var(--hairline-soft); border-bottom: 1px solid var(--hairline-soft); }
+
 .dark-band {
   background: linear-gradient(135deg, var(--hero-dark-from) 0%, var(--hero-dark-to) 100%);
   color: var(--on-dark); padding: var(--sp-section-lg) 0; position: relative; overflow: hidden;
 }
+
 .dark-band .grid-bg {
   position: absolute; inset: 0; pointer-events: none;
   background-image: linear-gradient(rgba(255,255,255,.05) 1px, transparent 1px),
