@@ -138,18 +138,19 @@ html[lang="ar"] .eyebrow { letter-spacing: 0; text-transform: none; font-size: 1
   border-bottom: 1px solid var(--hairline-soft);
 }
 .nav-inner { max-width: 1280px; margin-inline: auto; padding-inline: 32px; height: 80px; display: flex; align-items: center; justify-content: space-between; }
-.nav-left  { display: flex; align-items: center; gap: 40px; }
-.wordmark  { font-size: 16px; font-weight: 600; display: flex; align-items: center; gap: 9px; }
+.nav-left  { display: flex; align-items: center; gap: 40px; min-width: 0; }
+.wordmark  { font-size: 16px; font-weight: 600; display: flex; align-items: center; gap: 9px; flex-shrink: 0; }
 .wordmark img { height: 64px; width: auto; display: block; } /* real registered mark — never redraw */
-.nav-links { display: flex; gap: 28px; }
-.nav-links a { font-size: 14px; font-weight: 500; color: var(--steel); transition: color .15s ease; }
+.nav-links { display: flex; gap: 28px; overflow-x: auto; scrollbar-width: none; }
+.nav-links::-webkit-scrollbar { display: none; }
+.nav-links a { font-size: 14px; font-weight: 500; color: var(--steel); transition: color .15s ease; flex-shrink: 0; }
 .nav-links a:hover, .nav-links a.active { color: var(--ink); }
 .nav-links a.active { font-weight: 600; }
 
 .nav-links a:focus-visible, .lang:focus-visible, .foot-col a:focus-visible, .card-feature:focus-visible, .card-link:focus-visible {
   outline: 2px solid var(--brand-green-deep); outline-offset: 2px; border-radius: var(--r-md);
 }
-.nav-right { display: flex; align-items: center; gap: 12px; }
+.nav-right { display: flex; align-items: center; gap: 12px; flex-shrink: 0; }
 .lang { font-size: 14px; font-weight: 500; color: var(--steel); padding: 8px 12px; border-radius: var(--r-md); }
 .nav-toggle { display: none; }
 .lang:hover { background: var(--surface); }
@@ -185,7 +186,7 @@ html[lang="ar"] .hero h1 { font-size: 64px; line-height: 1.15; }
 .card-link    { font-size: 14px; font-weight: 500; margin-top: var(--sp-xl); display: inline-flex; align-items: center; gap: 6px; }
 .card-link .arr { transition: transform .15s ease; }
 .card-feature:hover .arr { transform: translateX(3px); }
-html[dir="rtl"] .card-feature:hover .arr { transform: translateX(-3px); }
+html[lang="ar"] .card-feature:hover .arr { transform: translateX(-3px); }
 
 /* check list — green check bullets */
 .check-list { list-style: none; display: flex; flex-direction: column; gap: var(--sp-xs); }
@@ -236,6 +237,7 @@ select.text-input { padding-block: 0; }
 .foot-col a { display: block; font-size: 14px; color: var(--steel); padding: 4px 0; }
 .foot-col a:hover { color: var(--ink); }
 .foot-bottom { max-width: 1280px; margin: var(--sp-section-sm) auto 0; padding-top: var(--sp-xl); border-top: 1px solid var(--hairline-soft); display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px; font-size: 13px; color: var(--steel); }
+.todo { display: none; } /* placeholder content awaiting real values — see CLAUDE.md */
 
 /* grid helpers */
 .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
