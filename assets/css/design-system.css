@@ -144,6 +144,11 @@ html[lang="ar"] .eyebrow { letter-spacing: 0; text-transform: none; font-size: 1
 .nav-links { display: flex; gap: 28px; }
 .nav-links a { font-size: 14px; font-weight: 500; color: var(--steel); transition: color .15s ease; }
 .nav-links a:hover, .nav-links a.active { color: var(--ink); }
+.nav-links a.active { font-weight: 600; }
+
+.nav-links a:focus-visible, .lang:focus-visible, .foot-col a:focus-visible, .card-feature:focus-visible, .card-link:focus-visible {
+  outline: 2px solid var(--brand-green-deep); outline-offset: 2px; border-radius: var(--r-md);
+}
 .nav-right { display: flex; align-items: center; gap: 12px; }
 .lang { font-size: 14px; font-weight: 500; color: var(--steel); padding: 8px 12px; border-radius: var(--r-md); }
 .nav-toggle { display: none; }
@@ -152,7 +157,7 @@ html[lang="ar"] .eyebrow { letter-spacing: 0; text-transform: none; font-size: 1
 /* ---------- 6. HERO (sky band) ---------- */
 .hero {
   background: linear-gradient(180deg, var(--hero-sky-from) 0%, var(--hero-sky-to) 100%);
-  padding: var(--sp-hero) 32px var(--sp-section-lg);
+  padding: var(--sp-hero) 32px var(--sp-section);
   text-align: center; position: relative; overflow: hidden;
 }
 .hero .cloud { position: absolute; border-radius: var(--r-full); background: rgba(255,255,255,.3); filter: blur(40px); pointer-events: none; }
@@ -189,6 +194,7 @@ html[dir="rtl"] .card-feature:hover .arr { transform: translateX(-3px); }
 
 /* ---------- 8. BANDS / SECTIONS ---------- */
 .band { padding: var(--sp-section-lg) 0; }
+.strip + main .band:first-child { padding-top: var(--sp-section); }
 .band-surface { background: var(--surface-soft); border-top: 1px solid var(--hairline-soft); border-bottom: 1px solid var(--hairline-soft); }
 
 .dark-band {
@@ -205,7 +211,7 @@ html[dir="rtl"] .card-feature:hover .arr { transform: translateX(-3px); }
 .dark-band .eyebrow { color: var(--brand-green); }
 
 /* capability strip */
-.strip { padding: var(--sp-section-sm) 32px; border-bottom: 1px solid var(--hairline-soft); }
+.strip { padding: var(--sp-xxl) 32px; border-bottom: 1px solid var(--hairline-soft); }
 .strip-row { display: flex; flex-wrap: wrap; justify-content: center; gap: 16px 48px; margin-top: 20px; }
 .strip-row span { font-size: 16px; font-weight: 500; color: var(--steel); }
 
@@ -219,6 +225,7 @@ html[dir="rtl"] .card-feature:hover .arr { transform: translateX(-3px); }
 textarea.text-input { height: auto; min-height: 120px; }
 select.text-input { padding-block: 0; }
 .text-input:focus { outline: none; border: 2px solid var(--brand-green); }
+.form-attempted .text-input:invalid { border-color: #d1453b; }
 .form-label { font-size: 14px; font-weight: 500; display: block; margin-bottom: 6px; }
 
 /* ---------- 10. FOOTER ---------- */
@@ -228,7 +235,7 @@ select.text-input { padding-block: 0; }
 .foot-col h5 { font-size: 14px; font-weight: 500; }
 .foot-col a { display: block; font-size: 14px; color: var(--steel); padding: 4px 0; }
 .foot-col a:hover { color: var(--ink); }
-.foot-bottom { max-width: 1280px; margin: var(--sp-section-sm) auto 0; padding-top: var(--sp-xl); border-top: 1px solid var(--hairline-soft); display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px; font-size: 13px; color: var(--stone); }
+.foot-bottom { max-width: 1280px; margin: var(--sp-section-sm) auto 0; padding-top: var(--sp-xl); border-top: 1px solid var(--hairline-soft); display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px; font-size: 13px; color: var(--steel); }
 
 /* grid helpers */
 .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
@@ -300,7 +307,10 @@ select.text-input { padding-block: 0; }
   .hero-cta { flex-direction: column; align-items: center; }
   .foot-grid { grid-template-columns: 1fr; }
   .nav-toggle { width: 44px; height: 44px; }
-  .nav-right .btn-primary { display: none; }
+  .nav-inner { padding-inline: 16px; }
+  .nav-right { gap: 6px; }
+  .lang { padding: 8px 6px; font-size: 13px; }
+  .nav-right .btn-primary { padding: 8px 14px; font-size: 13px; }
   .cta .row { flex-direction: column; align-items: center; }
   .step-row, .step-row.steps-4 { grid-template-columns: 1fr; }
 }
