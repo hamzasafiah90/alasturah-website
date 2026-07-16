@@ -69,22 +69,14 @@
   }
 
   // Show success message if redirected back after Web3Forms submission
-  (function () {
-    const urlParams = new URLSearchParams(window.location.search);
-    if (urlParams.get('sent') === '1') {
-      const form = document.getElementById('contact-form');
-      if (form) {
-        form.style.display = 'none';
-        const msg = document.createElement('div');
-        msg.className = 'form-success';
-        msg.style.cssText = 'text-align:center;padding:2rem;font-size:1.1rem;color:var(--color-primary,#1a3c6e);';
-        // Detect language from <html dir> attribute
-        const isArabic = document.documentElement.dir === 'rtl';
-        msg.innerHTML = isArabic
-          ? '<p>✅ تم إرسال رسالتك بنجاح. سنتواصل معك قريباً.</p>'
-          : '<p>✅ Your message was sent successfully. We will get back to you shortly.</p>';
-        form.parentNode.insertBefore(msg, form);
-      }
-    }
-  })();
+  var urlParams = new URLSearchParams(window.location.search);
+  if (contactForm && urlParams.get('sent') === '1') {
+    contactForm.style.display = 'none';
+    var msg = document.createElement('div');
+    msg.className = 'form-success';
+    msg.innerHTML = isArabicForm
+      ? '<p>✅ تم إرسال رسالتك بنجاح. سنتواصل معك قريباً.</p>'
+      : '<p>✅ Your message was sent successfully. We will get back to you shortly.</p>';
+    contactForm.parentNode.insertBefore(msg, contactForm);
+  }
 })();

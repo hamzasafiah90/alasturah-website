@@ -228,6 +228,7 @@ select.text-input { padding-block: 0; }
 .text-input:focus { outline: none; border: 2px solid var(--brand-green); }
 .form-attempted .text-input:invalid { border-color: #d1453b; }
 .form-label { font-size: 14px; font-weight: 500; display: block; margin-bottom: 6px; }
+.form-success { text-align: center; padding: 32px; font-size: 18px; color: var(--annotate); }
 
 /* ---------- 10. FOOTER ---------- */
 .footer { border-top: 1px solid var(--hairline); padding: var(--sp-section) 32px var(--sp-xxxl); }
