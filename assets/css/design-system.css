@@ -16,13 +16,11 @@
   --on-primary: #fff;
   --brand-green: #00d4a4;
   --brand-green-deep: #00b48a;
-  --brand-green-soft: #7cebcb;
   --hero-sky-from: #87a8c8;
   --hero-sky-to: #f5e9d8;
   --hero-dark-from: #1a3d4a;
   --hero-dark-to: #2d5a4f;
   --canvas: #fff;
-  --canvas-dark: #0a0a0a;
   --surface: #f7f7f7;
   --surface-soft: #fafafa;
   --surface-code: #1c1c1e;
@@ -38,7 +36,6 @@
   --on-dark: #fff;
   --on-dark-muted: #b3b3b3;
   --annotate: #1ba673;
-  --tag: #3772cf;
   --warn: #c37d0d;
   --error: #d45656;
 
@@ -53,12 +50,11 @@
   --track-h2: -0.5px;
 
   /* radius */
-  --r-xs: 4px; --r-sm: 6px; --r-md: 8px; --r-lg: 12px;
-  --r-xl: 16px; --r-xxl: 24px; --r-full: 9999px;
+  --r-md: 8px; --r-lg: 12px; --r-full: 9999px;
 
   /* spacing */
-  --sp-xxs: 4px; --sp-xs: 8px; --sp-sm: 12px; --sp-md: 16px;
-  --sp-lg: 20px; --sp-xl: 24px; --sp-xxl: 32px; --sp-xxxl: 40px;
+  --sp-xs: 8px; --sp-sm: 12px; --sp-md: 16px;
+  --sp-xl: 24px; --sp-xxl: 32px; --sp-xxxl: 40px;
   --sp-section-sm: 48px; --sp-section: 64px; --sp-section-lg: 96px;
   --sp-hero: 120px;
 }
@@ -226,7 +222,7 @@ html[lang="ar"] .card-feature:hover .arr { transform: translateX(-3px); }
 textarea.text-input { height: auto; min-height: 120px; }
 select.text-input { padding-block: 0; }
 .text-input:focus { outline: none; border: 2px solid var(--brand-green); }
-.form-attempted .text-input:invalid { border-color: #d1453b; }
+.form-attempted .text-input:invalid { border-color: var(--error); }
 .form-label { font-size: 14px; font-weight: 500; display: block; margin-bottom: 6px; }
 .form-success { text-align: center; padding: 32px; font-size: 18px; color: var(--annotate); }
 
@@ -240,7 +236,7 @@ select.text-input { padding-block: 0; }
 .foot-bottom { max-width: 1280px; margin: var(--sp-section-sm) auto 0; padding-top: var(--sp-xl); border-top: 1px solid var(--hairline-soft); display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px; font-size: 13px; color: var(--steel); }
 .todo { display: none; } /* placeholder content awaiting real values — see CLAUDE.md */
 
-/* grid helpers */
+/* ---------- 11. GRID HELPERS ---------- */
 .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
 .grid-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; margin-top: 48px; }
 
@@ -279,7 +275,7 @@ select.text-input { padding-block: 0; }
 .step h3 { margin-top: 12px; }
 .step p { font-size: 14px; color: var(--steel); margin-top: 8px; }
 
-/* ---------- 11. RESPONSIVE ---------- */
+/* ---------- 13. RESPONSIVE ---------- */
 @media (max-width: 1023px) {
   .nav-toggle { display: inline-flex; width: 40px; height: 40px; border-radius: var(--r-full); background: var(--canvas); border: 1px solid var(--hairline); cursor: pointer; align-items: center; justify-content: center; padding: 0; }
   .nav-toggle svg { width: 18px; height: 18px; stroke: var(--ink); }
