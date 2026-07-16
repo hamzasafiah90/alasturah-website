@@ -40,6 +40,34 @@
     }
   }
 
+  // Contact form: prevent double-submit, show a sending state, and reveal
+  // native validation styling only after the user has attempted to submit.
+  var contactForm = document.getElementById('contact-form');
+  if (contactForm) {
+    var submitBtn = contactForm.querySelector('button[type="submit"]');
+    var statusEl = contactForm.querySelector('.form-status');
+    var isArabicForm = document.documentElement.dir === 'rtl';
+    // The native 'submit' event only fires once all fields pass constraint
+    // validation, so catch failures via the (non-bubbling) 'invalid' event.
+    contactForm.addEventListener('invalid', function () {
+      contactForm.classList.add('form-attempted');
+      if (statusEl) {
+        statusEl.textContent = isArabicForm
+          ? 'يرجى تعبئة الحقول المطلوبة قبل الإرسال.'
+          : 'Please fill in the required fields before submitting.';
+      }
+    }, true);
+    contactForm.addEventListener('submit', function (e) {
+      if (submitBtn) {
+        submitBtn.disabled = true;
+        submitBtn.textContent = isArabicForm ? 'جارٍ الإرسال…' : 'Sending…';
+      }
+      if (statusEl) {
+        statusEl.textContent = isArabicForm ? 'جارٍ إرسال طلبك…' : 'Sending your request…';
+      }
+    });
+  }
+
   // Show success message if redirected back after Web3Forms submission
   (function () {
     const urlParams = new URLSearchParams(window.location.search);
