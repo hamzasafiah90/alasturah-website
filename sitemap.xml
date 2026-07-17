@@ -2,75 +2,75 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://alasturah.com/en/index.html</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://alasturah.com/en/index.html" />
-    <xhtml:link rel="alternate" hreflang="ar" href="https://alasturah.com/ar/index.html" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://alasturah.com/en/index.html" />
+    <loc>https://alasturah.com/en/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://alasturah.com/en/" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://alasturah.com/ar/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://alasturah.com/en/" />
   </url>
   <url>
-    <loc>https://alasturah.com/ar/index.html</loc>
-    <xhtml:link rel="alternate" hreflang="ar" href="https://alasturah.com/ar/index.html" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://alasturah.com/en/index.html" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://alasturah.com/en/index.html" />
+    <loc>https://alasturah.com/ar/</loc>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://alasturah.com/ar/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://alasturah.com/en/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://alasturah.com/en/" />
   </url>
   <url>
-    <loc>https://alasturah.com/en/network.html</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://alasturah.com/en/network.html" />
-    <xhtml:link rel="alternate" hreflang="ar" href="https://alasturah.com/ar/network.html" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://alasturah.com/en/network.html" />
+    <loc>https://alasturah.com/en/network</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://alasturah.com/en/network" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://alasturah.com/ar/network" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://alasturah.com/en/network" />
   </url>
   <url>
-    <loc>https://alasturah.com/ar/network.html</loc>
-    <xhtml:link rel="alternate" hreflang="ar" href="https://alasturah.com/ar/network.html" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://alasturah.com/en/network.html" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://alasturah.com/en/network.html" />
+    <loc>https://alasturah.com/ar/network</loc>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://alasturah.com/ar/network" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://alasturah.com/en/network" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://alasturah.com/en/network" />
   </url>
   <url>
-    <loc>https://alasturah.com/en/security.html</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://alasturah.com/en/security.html" />
-    <xhtml:link rel="alternate" hreflang="ar" href="https://alasturah.com/ar/security.html" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://alasturah.com/en/security.html" />
+    <loc>https://alasturah.com/en/security</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://alasturah.com/en/security" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://alasturah.com/ar/security" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://alasturah.com/en/security" />
   </url>
   <url>
-    <loc>https://alasturah.com/ar/security.html</loc>
-    <xhtml:link rel="alternate" hreflang="ar" href="https://alasturah.com/ar/security.html" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://alasturah.com/en/security.html" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://alasturah.com/en/security.html" />
+    <loc>https://alasturah.com/ar/security</loc>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://alasturah.com/ar/security" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://alasturah.com/en/security" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://alasturah.com/en/security" />
   </url>
   <url>
-    <loc>https://alasturah.com/en/software.html</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://alasturah.com/en/software.html" />
-    <xhtml:link rel="alternate" hreflang="ar" href="https://alasturah.com/ar/software.html" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://alasturah.com/en/software.html" />
+    <loc>https://alasturah.com/en/software</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://alasturah.com/en/software" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://alasturah.com/ar/software" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://alasturah.com/en/software" />
   </url>
   <url>
-    <loc>https://alasturah.com/ar/software.html</loc>
-    <xhtml:link rel="alternate" hreflang="ar" href="https://alasturah.com/ar/software.html" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://alasturah.com/en/software.html" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://alasturah.com/en/software.html" />
+    <loc>https://alasturah.com/ar/software</loc>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://alasturah.com/ar/software" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://alasturah.com/en/software" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://alasturah.com/en/software" />
   </url>
   <url>
-    <loc>https://alasturah.com/en/about.html</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://alasturah.com/en/about.html" />
-    <xhtml:link rel="alternate" hreflang="ar" href="https://alasturah.com/ar/about.html" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://alasturah.com/en/about.html" />
+    <loc>https://alasturah.com/en/about</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://alasturah.com/en/about" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://alasturah.com/ar/about" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://alasturah.com/en/about" />
   </url>
   <url>
-    <loc>https://alasturah.com/ar/about.html</loc>
-    <xhtml:link rel="alternate" hreflang="ar" href="https://alasturah.com/ar/about.html" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://alasturah.com/en/about.html" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://alasturah.com/en/about.html" />
+    <loc>https://alasturah.com/ar/about</loc>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://alasturah.com/ar/about" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://alasturah.com/en/about" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://alasturah.com/en/about" />
   </url>
   <url>
-    <loc>https://alasturah.com/en/contact.html</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://alasturah.com/en/contact.html" />
-    <xhtml:link rel="alternate" hreflang="ar" href="https://alasturah.com/ar/contact.html" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://alasturah.com/en/contact.html" />
+    <loc>https://alasturah.com/en/contact</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://alasturah.com/en/contact" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://alasturah.com/ar/contact" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://alasturah.com/en/contact" />
   </url>
   <url>
-    <loc>https://alasturah.com/ar/contact.html</loc>
-    <xhtml:link rel="alternate" hreflang="ar" href="https://alasturah.com/ar/contact.html" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://alasturah.com/en/contact.html" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://alasturah.com/en/contact.html" />
+    <loc>https://alasturah.com/ar/contact</loc>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://alasturah.com/ar/contact" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://alasturah.com/en/contact" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://alasturah.com/en/contact" />
   </url>
 </urlset>
