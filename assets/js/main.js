@@ -68,6 +68,45 @@
     });
   }
 
+  // Cookie consent card: Accept is remembered (localStorage) so it never
+  // shows again; Reject is intentionally not persisted, so a fresh page
+  // load (i.e. the next visit) asks again.
+  var cookieCard = document.getElementById('cookie-consent');
+  if (cookieCard) {
+    var cookieAccept = document.getElementById('cookie-accept');
+    var cookieReject = document.getElementById('cookie-reject');
+    var cookieReopen = document.getElementById('cookie-reopen');
+
+    function hideCookieCard() {
+      cookieCard.hidden = true;
+      if (cookieReopen) cookieReopen.classList.add('show');
+    }
+
+    if (localStorage.getItem('cookie-consent') === 'granted') {
+      cookieCard.hidden = true;
+      if (cookieReopen) cookieReopen.classList.add('show');
+    } else {
+      cookieCard.hidden = false;
+    }
+
+    if (cookieAccept) {
+      cookieAccept.addEventListener('click', function () {
+        localStorage.setItem('cookie-consent', 'granted');
+        if (window.gtag) gtag('consent', 'update', { analytics_storage: 'granted' });
+        hideCookieCard();
+      });
+    }
+    if (cookieReject) {
+      cookieReject.addEventListener('click', hideCookieCard);
+    }
+    if (cookieReopen) {
+      cookieReopen.addEventListener('click', function () {
+        cookieCard.hidden = false;
+        cookieReopen.classList.remove('show');
+      });
+    }
+  }
+
   // Show success message if redirected back after Web3Forms submission
   var urlParams = new URLSearchParams(window.location.search);
   if (contactForm && urlParams.get('sent') === '1') {
