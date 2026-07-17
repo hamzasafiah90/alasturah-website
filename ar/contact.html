@@ -34,6 +34,8 @@
   .form-field.full { grid-column: 1 / -1; }
   .form-status { margin-top: 0; font-size: 14px; color: var(--steel); }
   .form-status:not(:empty) { margin-top: 12px; }
+  .consent-label { display: flex; align-items: flex-start; gap: 8px; font-size: 14px; color: var(--steel); margin: 4px 0 16px; }
+  .consent-label input { flex: none; margin-top: 3px; }
   .contact-panel { display: flex; flex-direction: column; gap: 20px; }
   .contact-row { display: flex; align-items: center; gap: 12px; font-size: 15px; color: var(--slate); }
   .contact-row .icon-tile { flex: none; margin-bottom: 0; }
@@ -118,6 +120,10 @@
               <textarea id="message" name="message" rows="5" required class="text-input"></textarea>
             </div>
           </div>
+          <label class="consent-label">
+            <input type="checkbox" name="consent" required />
+            <span>أوافق على <a href="privacy.html" target="_blank" rel="noopener">سياسة الخصوصية</a> وأوافق على معالجة بياناتي كما هو موضح فيها. *</span>
+          </label>
           <button type="submit" class="btn btn-primary" style="width:100%;">إرسال الطلب</button>
           <p class="form-status" role="status"></p>
         </form>
