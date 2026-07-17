@@ -69,8 +69,9 @@
   }
 
   // Cookie consent card: Accept is remembered (localStorage) so it never
-  // shows again; Reject is intentionally not persisted, so a fresh page
-  // load (i.e. the next visit) asks again.
+  // shows again; Reject clears any stored choice (including a prior
+  // Accept, reachable via "Cookie preferences") and is intentionally not
+  // re-persisted, so a fresh page load (i.e. the next visit) asks again.
   var cookieCard = document.getElementById('cookie-consent');
   if (cookieCard) {
     var cookieAccept = document.getElementById('cookie-accept');
@@ -97,7 +98,11 @@
       });
     }
     if (cookieReject) {
-      cookieReject.addEventListener('click', hideCookieCard);
+      cookieReject.addEventListener('click', function () {
+        localStorage.removeItem('cookie-consent');
+        if (window.gtag) gtag('consent', 'update', { analytics_storage: 'denied' });
+        hideCookieCard();
+      });
     }
     if (cookieReopen) {
       cookieReopen.addEventListener('click', function () {
