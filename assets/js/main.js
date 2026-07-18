@@ -26,6 +26,18 @@
     el.textContent = new Date().getFullYear();
   });
 
+  // Track WhatsApp clicks (floating button + inline CTAs) as a GA4 event
+  document.querySelectorAll('a[href*="wa.me"]').forEach(function (link) {
+    link.addEventListener('click', function () {
+      if (window.gtag) {
+        gtag('event', 'whatsapp_click', {
+          page_location: window.location.href,
+          link_classes: link.className
+        });
+      }
+    });
+  });
+
   // Pre-select the "interest" dropdown on the contact page when arriving
   // via a product/service link like contact.html?interest=call-booster
   var interestSelect = document.querySelector("#interest");
